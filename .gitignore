@@ -1,0 +1,8 @@
+doc/
+bin/
+log/
+dist/
+*.out
+temp/
+**/*~*
+.fuse_*

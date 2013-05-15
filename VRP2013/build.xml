@@ -75,7 +75,26 @@
 	</target>
 	<target depends="clean" name="cleanall"/>
 	
-	<target depends="build-subprojects,build-project" name="build"/>
+	<target  name="build" depends="build-subprojects,build-project">
+	</target>
+	
+	<target  name="dist">
+		<zip destfile="dist/VRP2013.zip" >
+			<zipfileset dir=".">    
+			    <include name="src/**"/>
+			    <exclude name="src/vrp2013/sol/**"/>
+			    <include name="instances/**"/>
+			    <include name="lib/**"/>
+			    <include name=".project"/>
+			    <include name=".settings"/>
+			    <include name=".classpath"/>
+				<include name=".settings/**"/>
+			</zipfileset>
+		</zip>
+	</target>
+	
+	<target  name="build-dist" depends="build-subprojects,build-project,dist">
+	</target>
 	
 	<target name="build-subprojects" depends="build-dependencies"/>
 	<target depends="init" name="build-project">
@@ -85,7 +104,9 @@
 			<classpath refid="VRP2013.classpath"/>
 		</javac>
 	</target>
+	
 	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	
 	<target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
 		<copy todir="${ant.library.dir}">
 			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
@@ -95,6 +116,7 @@
 			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
 		</unzip>
 	</target>
+	
 	<target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
 		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
 		<antcall target="build"/>

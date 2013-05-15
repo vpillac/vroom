@@ -109,15 +109,20 @@ public class HeuristicConcentration implements IVRPOptimizationAlgorithm {
             }
         }
         mRoutes = Collections.unmodifiableList(mRoutes);
-        buildModel();
+
+        mSolution = incumbent;
+
+        if (!mRoutes.isEmpty())
+            buildModel();
     }
 
     @Override
     public VRPSolution call() throws IloException {
+        if (mCplex != null) {
+            mCplex.solve();
 
-        mCplex.solve();
-
-        buildSolution();
+            buildSolution();
+        }
 
         return getBestSolution();
     }
@@ -290,7 +295,8 @@ public class HeuristicConcentration implements IVRPOptimizationAlgorithm {
      * @throws IloException
      */
     public void exportModel(String file) throws IloException {
-        mCplex.exportModel(file);
+        if (mCplex != null)
+            mCplex.exportModel(file);
     }
 
     @Override

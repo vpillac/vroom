@@ -75,7 +75,7 @@ public class VND implements IVRPOptimizationAlgorithm {
             IRoutePool<INodeVisit> routePool) {
         mInstance = instance;
 
-        mNeighborhoods = new ArrayList<>(4);
+        mNeighborhoods = new ArrayList<>();
         mNeighborhoods.add(new OrOptNeighborhood<>(constraintHandler));
         mNeighborhoods.add(new SwapNeighborhood<>(constraintHandler));
         mNeighborhoods.add(new TwoOptNeighborhood<>(constraintHandler));

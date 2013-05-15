@@ -1,0 +1,6 @@
+#==================== COMMENTS ====================
+TRSP benchmark (../Instances/cvrptw/solomon)
+#==================================================
+
+
+run_id;name;group;size;crew;run;comment;init_time;init_it;init_status;init_unserved;init_wt;alns_time_s;alns_it;alns_unserved;alns_wt;alns_K;alns_imp_wt;alns_checksol;postop_time_s;postop_unserved;postop_wt;postop_K;postop_imp_wt;postop_checksol;postop_bbgap;postop_status;postop_pool_size;postop_pool_collisions;bks;alns_gap;postop_gap;bks_K;bks_opt;seeds;final_sol

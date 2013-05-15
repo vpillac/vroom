@@ -1,0 +1,44 @@
+#==================== COMMENTS ====================
+Date: Tue Dec 07 16:32:38 COT 2010
+Demand distribution: UNIFORM
+MSA:
+DefaultComponentManager
+Scenario Generator:
+ VRPSDScenarioGenerator
+Scenario Optimizer:
+ VRPSDSVScenarioOptimizer 
+Init (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@2321ab80):VersatileLocalSearch (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@2321ab80)
+ Init:MSACWInitialization (ClarkeAndWrightHeuristic Algo:MSACWSavingsHeuristic)
+ Pertub:Identity
+ LS:VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Opt (maxT:10000,maxIt:10000,BI,det): VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Scenario Updater:
+ VRPSDScenarioUpdater
+Solution Builder:
+ VRPSDConsensus
+Pool Cleaner:
+ VRPPoolCleanerBase
+Request Sampler:
+ VRPRequestSamplerBase
+Request Validator:
+ VRPRequestValidatorBase
+
+
+#==================================================
+
+
+run_id;instance_name;size;vehicle_capacity;running_time;cost;perf_inf;failures;speed;comment;seeds;status;gap_pi
+32;i_40r1c116;40;116;288;6.861;6.617;0;4.000;C;[36063798, 36063799, 36063800, 36063801, 36063802, 36063803];NORMAL;0.037
+34;i_40r1c116;40;116;289;7.062;6.679;0;4.000;C;[36063810, 36063811, 36063812, 36063813, 36063814, 36063815];NORMAL;0.057
+62;i_40r1c116;40;116;314;8.957;6.993;1;4.000;C;[36063978, 36063979, 36063980, 36063981, 36063982, 36063983];NORMAL;0.281
+71;i_40r1c116;40;116;299;7.143;6.961;1;4.000;C;[36064032, 36064033, 36064034, 36064035, 36064036, 36064037];NORMAL;0.026
+94;i_40r1c116;40;116;288;7.126;6.530;0;4.000;C;[36064170, 36064171, 36064172, 36064173, 36064174, 36064175];NORMAL;0.091
+2;i_40r1c183;40;183;277;6.194;6.088;0;4.000;C;[36003612, 36003613, 36003614, 36003615, 36003616, 36003617];NORMAL;0.017

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="edu/uniandes/copa/heuristics/jcw/JCWArcTest.java" kind="src" path="test"/>
+	<classpathentry kind="src" path="bench"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomUtilities"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomModeling"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SSJ"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Log4j-1.2.15"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

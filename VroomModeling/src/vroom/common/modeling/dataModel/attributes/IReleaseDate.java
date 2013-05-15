@@ -1,0 +1,23 @@
+package vroom.common.modeling.dataModel.attributes;
+
+/**
+ * The Interface IReleaseDate represent a release date that can be associated with a request.
+ * <p>
+ * A release date represent the date at which the request becomes available to the optimization algorithm. It is useful
+ * when a dynamic benchmark instance is simulated.
+ * 
+ * @author Victor Pillac, <a href="http://uniandes.edu.co">Universidad de Los Andes</a> - <a
+ *         href="http://copa.uniandes.edu.co">Copa</a>, <a href="http://www.emn.fr">Ecole des Mines de Nantes</a>-<a
+ *         href="http://www.irccyn.ec-nantes.fr/irccyn/d/en/equipes/Slp">SLP</a>
+ * @version 1.0 #created 15-Feb-2010 11:29:50 a.m.
+ */
+public interface IReleaseDate extends IRequestAttribute {
+
+    /**
+     * Double value.
+     * 
+     * @return the value of this release date as a double
+     */
+    public double doubleValue();
+
+}

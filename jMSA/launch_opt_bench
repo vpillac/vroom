@@ -1,0 +1,58 @@
+#/bin/bash.sh
+
+# An error exit function
+error_exit()
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+# default values
+sizes="[5,8,20,30,40,60,100]"
+sets="[1]"
+nruns=20
+comment=""
+Xms="1024m"
+Xmx="4000m"
+
+if [  $# -ne 4 ]; then
+    error_exit "## Error: Usage launch [sizes] [sets] nruns comment"
+fi
+
+sizes=$1
+sets=$2
+nruns=$3
+comment=$4
+
+main=vroom.optimization.online.jmsa.benchmarking.MSAOptBenchmarking
+params="${sizes} ${sets} ${nruns} ${comment}"
+classpath="./bin:../Libraries/vroom_heuristics/vroom_heuristics.jar:../Libraries/vroom_utilities/vroom_utilities.jar:../Libraries/vroom_routing/vroom_routing.jar:../Libraries/jVRP/jVRP.jar:../Libraries/log4j-1.2.15/log4j-1.2.15.jar:../Libraries/ssj-20091109/ssj.jar:../Libraries/gurobi301/gurobi.jar"
+javalib="/opt/gurobi/lib"
+
+echo "---------------------------------------------"
+echo "Cleaning all projects"
+ant cleanall
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while cleaning the project, aborting"
+fi
+echo "Building the project"
+ant build build-bench-project
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while building the project, aborting"
+fi
+echo "---------------------------------------------"
+
+echo "---------------------------------------------"
+echo "Running benchmarks"
+echo "Params:    ${params}"
+echo "Classpath: ${classpath}"
+echo "Main type: ${main}"
+echo "java -Xms${Xms} -Xmx${Xmx} -cp ${classpath} -Djava.library.path=${javalib} ${main} ${params}"
+echo "---------------------------------------------"
+
+
+java -Xms${Xms} -Xmx${Xmx} -cp "${classpath}" -Djava.library.path=${javalib} ${main} ${params} 

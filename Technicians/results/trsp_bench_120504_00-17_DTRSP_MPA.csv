@@ -1,0 +1,6 @@
+#==================== COMMENTS ====================
+TRSP benchmark (../Instances/trsp/pillac/crew25)
+#==================================================
+
+
+name;group;size;crew;dp;run;comment;final_wall_time;final_sim_time;bks;static_cost;static_num_req;rejected_count;rejected;seeds;final_sol

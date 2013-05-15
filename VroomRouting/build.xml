@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+	vroom routing build file
+	Author: Victor Pillac
+	Version: 28/06/2011
+-->
+<project basedir="." default="build" name="vroom_routing">
+	<import file="build-common.xml"/>
+	
+	<!-- Project version		-->
+	<property name="version" value="1" description="The build version of this project"/>
+
+	<!-- Classpath -->	
+	<path id="javac.classpath">
+        <pathelement location="${bin.dir}"/>
+		<pathelement location="${jar.VroomModeling}"/>
+		<pathelement location="${jar.VroomUtilities}"/>
+        <path refid="junit4.libraryclasspath"/>
+        <path refid="log4j.libraryclasspath"/>
+        <path refid="ssj.libraryclasspath"/>
+        <path refid="gurobi.libraryclasspath"/>
+        <fileset refid="runtime.libs"/>
+        <fileset refid="dependencies.libs"/>
+    </path>
+    <property name="javac.classpathprop" refid="javac.classpath"/>
+
+	<!-- Javadoc parameters -->
+	<property name="javadoc.author" value="Victor Pillac, EMN, France, Uniandes, Colombia"/>
+	<property name="javadoc.windowtitle" value="Generic exact routing algorithms"/>
+
+	<property name="javadoc.encoding.used" value="UTF-8"/>
+	
+	
+    <target depends="clean" name="cleanall">
+    	<ant antfile="${VroomUtilities.location}/build.xml" dir="${VroomUtilities.location}" inheritAll="false" target="cleanall"/>
+    	<ant antfile="${VroomModeling.location}/build.xml" dir="${VroomModeling.location}" inheritAll="false" target="cleanall"/>
+    </target>
+	
+    <target name="-build-dependencies">
+		<echo message="Building the Utilities project"/>
+		<echo message="#----------------------------------------------------------"/>
+		<ant antfile="${VroomUtilities.location}/build.xml" dir="${VroomUtilities.location}" inheritAll="false" target="light-dist"/>
+		<echo message="#Utilities project built"/>
+		<echo message="#----------------------------------------------------------"/>
+		
+    	<echo message="Building the VroomModeling project"/>
+		<echo message="#----------------------------------------------------------"/>
+		<ant antfile="${VroomModeling.location}/build.xml" dir="${VroomModeling.location}" inheritAll="false" target="light-dist"/>
+		<echo message="#VroomModeling project built"/>
+		<echo message="#----------------------------------------------------------"/>
+    </target>
+
+</project>

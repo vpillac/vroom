@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head></head>
+<body>
+Contains generic objects to define a vehicle routing problem (VRP).
+
+<p>An instance of a problem is defined by an {@link
+vroom.modelling.jvrp.dataModel.StaticInstance} or {@link
+vroom.modelling.jvrp.dataModel.DynamicInstance} depending on the
+nature of the problem. Each instance has a {@link
+vroom.modelling.jvrp.dataModel.VehicleRoutingProblemDefinition} associated to it, providing a description
+of the related VRP.</p>
+
+<p>More specifically, an <b>instance</b> contains a {@link
+vroom.modelling.jvrp.dataModel.Fleet} composed by a set of {@link
+vroom.modelling.jvrp.dataModel.Vehicle}s with given {@link vroom.modelling.jvrp.dataModel.attributes.IVehicleAttribute}s, 
+as well as a set of {@link vroom.modelling.jvrp.dataModel.Request}s associated
+with {@link vroom.modelling.jvrp.dataModel.Node}(s) and with specific
+{@link vroom.modelling.jvrp.dataModel.attributes.IRequestAttribute}s.
+This package also allow the representation of a {@link
+vroom.modelling.jvrp.dataModel.Solution} by defining a set of {@link
+vroom.modelling.jvrp.dataModel.IRoute}s composed by a sequence of
+{@link vroom.modelling.jvrp.dataModel.NodeVisit}s</p>
+</body>
+</html>

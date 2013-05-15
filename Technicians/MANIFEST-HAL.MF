@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: Victor Pillac
+Main-Class: vroom.trsp.bench.TRSPHalRun
+Class-Path:  lib/vroom_heuristics/vroom_heuristics.jar lib/vroom_utilities/vroom_utilities.jar lib/vroom_modelling/vroom_modelling.jar lib/log4j-1.2.15/log4j-1.2.15.jar lib/ssj-20091109/ssj.jar lib/gurobi460/gurobi.jar

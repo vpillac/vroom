@@ -1,0 +1,38 @@
+#==================== COMMENTS ====================
+Date: Mon Nov 29 18:08:04 COT 2010
+Demand distribution: NORMAL
+MSA:
+SingleThreadComponentManager
+Scenario Generator:
+ VRPSDScenarioGenerator
+Scenario Optimizer:
+ VRPSDSVScenarioOptimizer 
+Init (ns=1,ni=0,nc=0,maxTime=60000,stop=Timer:not started, timeout:60000ms Iterations:0/2147483647):VersatileLocalSearch (ns=1,ni=0,nc=0,maxTime=60000,stop=Timer:not started, timeout:60000ms Iterations:0/2147483647)
+ Init:MSACWInitialization (ClarkeAndWrightHeuristic Algo:MSACWSavingsHeuristic)
+ Pertub:Identity
+ LS:VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Opt (maxT:10000,maxIt:10000,BI,det): VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Scenario Updater:
+ VRPSDScenarioUpdater
+Solution Builder:
+ VRPSDConsensus
+Pool Cleaner:
+ VRPPoolCleanerBase
+Request Sampler:
+ VRPRequestSamplerBase
+Request Validator:
+ VRPRequestValidatorBase
+
+
+#==================================================
+
+
+run_id;instance_name;size;vehicle_capacity;running_time;cost;perf_inf;failures;speed;comment;seeds;status;gap_pi

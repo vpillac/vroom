@@ -1,0 +1,58 @@
+# /bin/bash.rc
+./build_trsp
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  echo "## Error while building the project, aborting"
+  exit 1
+fi
+
+#pALNS+SC Diversity pool + Noise
+#./launch_trsp config/bench/bench_cvrptw_palnssc.cfg  ALNS_PALNS_POOL=vroom.common.heuristics.alns.DiversifiedPool -c CVRPTW_pALNSSC_divPool_FixedNoise
+
+#pALNS+SC Diversity pool + No Noise
+#./launch_trsp config/bench/bench_cvrptw_palnssc.cfg  ALNS_PALNS_POOL=vroom.common.heuristics.alns.DiversifiedPool ALNS_REP_NOISE=false -c CVRPTW_pALNSSC_divPool_noNoise
+
+#pALNS+SC Simple pool + Noise
+#./launch_trsp config/bench/bench_cvrptw_palnssc.cfg  -c CVRPTW_pALNSSC_FixedNoise
+
+#pALNS+SC Simple pool + No Noise
+#./launch_trsp config/bench/bench_cvrptw_palnssc.cfg  ALNS_REP_NOISE=false -c CVRPTW_pALNSSC_noNoise
+
+#pALNS+SC with 25k iterations in parallel
+#./launch_trsp config/bench/bench_cvrptw_palnssc.cfg ALNS_PALNS_IT_P=25000  -c CVRPTW_pALNSSC_P25kFixed
+
+#ALNS+SC pIns (old)
+#./launch_trsp config/bench/bench_cvrptw_palnssc.cfg ALNS_PARALLEL=false RUN_INIT_HEUR=vroom.trsp.optimization.constructive.TRSPpInsertion -c CVRPTW_ALNSSC_pInsFixed
+
+
+#pALNS+SC TRSP
+#./launch_trsp config/bench/bench_trsp_palnssc_25crew.cfg ALNS_PALNS_POOL=vroom.common.heuristics.alns.DiversifiedPool ALNS_REP_NOISE=false  -c TRSP_pALNSSC_25crew_divPool_noNoise
+#./launch_trsp config/bench/bench_trsp_palnssc_25crew.cfg ALNS_PALNS_POOL=vroom.common.heuristics.alns.DiversifiedPool  -c TRSP_pALNSSC_25crew_divPool
+./launch_trsp config/bench/bench_trsp_palnssc_25crew.cfg -c TRSP_pALNSSC
+./launch_trsp config/bench/bench_trsp_palnssc_praxedo.cfg -c TRSP_pALNSSC_Praxedo
+
+
+#RCHSC
+#./launch_trsp config/bench/bench_trsp_rchsc_25sub.cfg  -c TRSP_RCHSC_subset25_giant
+#./launch_trsp config/bench/bench_trsp_rchsc_twcheck_25sub_rnn.cfg  -c TRSP_RCHSC_subset25_giant_twcheck_rnn
+#./launch_trsp config/bench/bench_trsp_rchsc_twcheck_25sub_rcw.cfg  -c TRSP_RCHSC_subset25_giant_twcheck_rcw
+
+#./launch_trsp config/bench/bench_christophides_rchsc.cfg -c VRP_Christofides_RCHSC
+#./launch_trsp config/bench/bench_augerat_rchsc.cfg -c VRP_Augerat_RCHSC
+#./launch_trsp config/bench/bench_solomon_rchsc.cfg -c VRPTW_Solomon_RCHSC
+
+#./launch_trsp config/bench/bench_dtrsp_alns_25crew.cfg -c DTRSP_all
+
+#DVRPTW
+#./launch_trsp ./config/bench/bench_dvrptw_lackner_pALNS.cfg -c DVRPTW_Lackner_pALNS
+#./launch_trsp ./config/bench/bench_dvrptw_lackner_pBiALNS.cfg -s BIOBJ_ALLOWED_DEG=1.0      -c DVRPTW_Lackner_pBiALNS_100
+#./launch_trsp ./config/bench/bench_dvrptw_lackner_pBiALNS.cfg -s BIOBJ_ALLOWED_DEG=1.01     -c DVRPTW_Lackner_pBiALNS_101
+#./launch_trsp ./config/bench/bench_dvrptw_lackner_pBiALNS.cfg -s BIOBJ_ALLOWED_DEG=1.02     -c DVRPTW_Lackner_pBiALNS_102
+#./launch_trsp ./config/bench/bench_dvrptw_lackner_pBiALNS.cfg -s BIOBJ_ALLOWED_DEG=1.05     -c DVRPTW_Lackner_pBiALNS_105
+#./launch_trsp ./config/bench/bench_dvrptw_lackner_pBiALNS.cfg -s BIOBJ_ALLOWED_DEG=1.10     -c DVRPTW_Lackner_pBiALNS_110
+#./launch_trsp ./config/bench/bench_dvrptw_lackner_pBiALNS.cfg -s BIOBJ_ALLOWED_DEG=Infinity -c DVRPTW_Lackner_pBiALNS_inf
+
+#DTRSP
+#./launch_trsp ./config/bench/bench_dtrsp_palns_25crew_subset.cfg -c DTRSP_pALNS_Regret_subset
+#./launch_trsp ./config/bench/bench_dtrsp_palns_25crew.cfg -c DTRSP_pALNS_Regret_all

@@ -1,0 +1,46 @@
+#==================== COMMENTS ====================
+Date: Mon Jan 10 14:18:49 CET 2011
+Demand distribution: UNIFORM
+MSA:
+DefaultComponentManager
+Scenario Generator:
+ VRPSDScenarioGenerator
+Scenario Optimizer:
+ VRPSDSVScenarioOptimizer 
+Init (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@2b0a3b24):VersatileLocalSearch (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@2b0a3b24)
+ Init:MSACWInitialization (ClarkeAndWrightHeuristic Algo:MSACWSavingsHeuristic)
+ Pertub:Identity
+ LS:VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Opt (maxT:10000,maxIt:10000,BI,det): VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Scenario Updater:
+ VRPSDScenarioUpdater
+Solution Builder:
+ VRPSDConsensus
+Pool Cleaner:
+ VRPPoolCleanerBase
+Request Sampler:
+ VRPRequestSamplerBase
+Request Validator:
+ VRPRequestValidatorBase
+
+
+#==================================================
+
+
+run_id;instance_name;size;vehicle_capacity;running_time;cost;perf_inf;failures;speed;comment;seeds;status;gap_pi
+81;i_30r4c137;30;137;198;6.021;5.867;0;3.000;data/VRPSDConsensus.conf;[27543240, 27543241, 27543242, 27543243, 27543244, 27543245];NORMAL;0.026
+52;i_30r1c87;30;87;205;7.044;7.023;0;3.000;data/VRPSDConsensus.conf;[27063018, 27063019, 27063020, 27063021, 27063022, 27063023];NORMAL;0.003
+60;i_30r1c87;30;87;215;7.727;7.021;0;3.000;data/VRPSDConsensus.conf;[27063066, 27063067, 27063068, 27063069, 27063070, 27063071];NORMAL;0.101
+20;i_30r2c87;30;87;223;8.349;7.283;1;3.000;data/VRPSDConsensus.conf;[27242844, 27242845, 27242846, 27242847, 27242848, 27242849];NORMAL;0.146
+42;i_30r2c87;30;87;206;7.194;7.194;0;3.000;data/VRPSDConsensus.conf;[27242976, 27242977, 27242978, 27242979, 27242980, 27242981];NORMAL;0.000
+69;i_30r2c87;30;87;223;8.813;7.259;1;3.000;data/VRPSDConsensus.conf;[27243138, 27243139, 27243140, 27243141, 27243142, 27243143];NORMAL;0.214
+77;i_30r2c87;30;87;3602;5.267;7.259;1;3.000;data/VRPSDConsensus.conf;[27243186, 27243187, 27243188, 27243189, 27243190, 27243191];TIME_LIMIT;-0.274
+86;i_30r2c87;30;87;206;7.319;7.194;0;3.000;data/VRPSDConsensus.conf;[27243240, 27243241, 27243242, 27243243, 27243244, 27243245];NORMAL;0.017

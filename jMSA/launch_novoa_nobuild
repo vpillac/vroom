@@ -1,0 +1,42 @@
+#/bin/bash.sh
+
+# An error exit function
+error_exit()
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+# default values
+Xms="1000m"
+Xmx="5800m"
+
+if [ $# = 0 ]; then
+    echo "Arguments:"
+    echo " At least one of the two:"
+    echo "  -f benchFile            : benchmark file"
+    echo "  -e [sizes] [sets] nruns : benchmark definitions"
+    echo " Optional:"
+    echo "  -i file or [f1,f2]      : configuration file(s)"
+    echo "  -t num                  : number of threads"
+    echo "  -c comment              : comment for the log/stats files"
+    exit 1
+fi
+
+main=vroom.optimization.online.jmsa.benchmarking.NovoaBenchmarking
+classpath="./bin:../Libraries/vroom_heuristics/vroom_heuristics.jar:../Libraries/vroom_utilities/vroom_utilities.jar:../Libraries/vroom_routing/vroom_routing.jar:../Libraries/jVRP/jVRP.jar:../Libraries/log4j-1.2.15/log4j-1.2.15.jar:../Libraries/ssj-20091109/ssj.jar:../Libraries/gurobi301/gurobi.jar"
+javalib="/opt/gurobi/lib"
+
+args=$*
+
+echo "---------------------------------------------"
+echo "Running benchmarks"
+echo "args:    ${args}"
+echo "Classpath: ${classpath}"
+echo "Main type: ${main}"
+echo "java -Xms${Xms} -Xmx${Xmx} -cp ${classpath} -Djava.library.path=${javalib} ${main} ${args}"
+echo "---------------------------------------------"
+
+
+java -server -Xms${Xms} -Xmx${Xmx} -cp "${classpath}" -Djava.library.path=${javalib} ${main} ${args} 
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="vroom/optimization/online/jmsa/MSAProxy.java|vroom/optimization/online/jmsa/MultipleScenarioApproach.java" kind="src" path="src"/>
+	<classpathentry excluding="/" kind="src" path="test"/>
+	<classpathentry kind="src" path="bench"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jung2"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomUtilities"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomModeling"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomHeuristics"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomRouting"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Log4j-1.2.15"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SSJ"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Gurobi301"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

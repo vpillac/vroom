@@ -1,0 +1,56 @@
+#==================== COMMENTS ====================
+Date: Tue Jan 11 17:11:42 CET 2011
+Demand distribution: UNIFORM
+MSA:
+DefaultComponentManager
+Scenario Generator:
+ VRPSDScenarioGenerator
+Scenario Optimizer:
+ VRPSDSVScenarioOptimizer 
+Init (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@2cb0ce8f):VersatileLocalSearch (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@2cb0ce8f)
+ Init:MSACWInitialization (ClarkeAndWrightHeuristic Algo:MSACWSavingsHeuristic)
+ Pertub:Identity
+ LS:VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Opt (maxT:10000,maxIt:10000,BI,det): VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Scenario Updater:
+ VRPSDScenarioUpdater
+Solution Builder:
+ VRPSDConsensus
+Pool Cleaner:
+ VRPPoolCleanerBase
+Request Sampler:
+ VRPRequestSamplerBase
+Request Validator:
+ VRPRequestValidatorBase
+
+
+#==================================================
+
+
+run_id;instance_name;size;vehicle_capacity;running_time;cost;perf_inf;failures;speed;comment;seeds;status;gap_pi
+77;i_30r2c87;30;87;218;8.019;7.259;0;3.000;data/VRPSDConsensus.conf;[27243186, 27243187, 27243188, 27243189, 27243190, 27243191];NORMAL;0.105
+8;i_40r1c116;40;116;273;7.009;7.008;0;4.000;data/VRPSDConsensus.conf;[36063654, 36063655, 36063656, 36063657, 36063658, 36063659];NORMAL;0.000
+12;i_40r1c116;40;116;291;9.049;6.995;1;4.000;data/VRPSDConsensus.conf;[36063678, 36063679, 36063680, 36063681, 36063682, 36063683];NORMAL;0.294
+13;i_40r1c116;40;116;274;7.604;6.893;0;4.000;data/VRPSDConsensus.conf;[36063684, 36063685, 36063686, 36063687, 36063688, 36063689];NORMAL;0.103
+41;i_40r1c116;40;116;270;7.009;6.797;0;4.000;data/VRPSDConsensus.conf;[36063852, 36063853, 36063854, 36063855, 36063856, 36063857];NORMAL;0.031
+94;i_40r1c116;40;116;272;7.102;6.530;0;4.000;data/VRPSDConsensus.conf;[36064170, 36064171, 36064172, 36064173, 36064174, 36064175];NORMAL;0.088
+64;i_60r2c175;60;175;435;9.728;9.535;0;6.000;data/VRPSDConsensus.conf;[54245808, 54245809, 54245810, 54245811, 54245812, 54245813];NORMAL;0.020
+52;i_30r1c87;30;87;205;7.044;7.023;0;3.000;data/VRPSDConsensus.conf;[27063018, 27063019, 27063020, 27063021, 27063022, 27063023];NORMAL;0.003
+60;i_30r1c87;30;87;215;7.941;7.021;0;3.000;data/VRPSDConsensus.conf;[27063066, 27063067, 27063068, 27063069, 27063070, 27063071];NORMAL;0.131
+20;i_30r2c87;30;87;222;8.441;7.283;2;3.000;data/VRPSDConsensus.conf;[27242844, 27242845, 27242846, 27242847, 27242848, 27242849];NORMAL;0.159
+42;i_30r2c87;30;87;209;7.253;7.194;0;3.000;data/VRPSDConsensus.conf;[27242976, 27242977, 27242978, 27242979, 27242980, 27242981];NORMAL;0.008
+69;i_30r2c87;30;87;214;7.528;7.259;1;3.000;data/VRPSDConsensus.conf;[27243138, 27243139, 27243140, 27243141, 27243142, 27243143];NORMAL;0.037
+77;i_30r2c87;30;87;208;7.263;7.259;0;3.000;data/VRPSDConsensus.conf;[27243186, 27243187, 27243188, 27243189, 27243190, 27243191];NORMAL;0.001
+86;i_30r2c87;30;87;208;7.299;7.194;0;3.000;data/VRPSDConsensus.conf;[27243240, 27243241, 27243242, 27243243, 27243244, 27243245];NORMAL;0.015
+81;i_30r4c137;30;137;196;6.021;5.867;0;3.000;data/VRPSDConsensus.conf;[27543240, 27543241, 27543242, 27543243, 27543244, 27543245];NORMAL;0.026
+12;i_40r1c116;40;116;290;9.049;6.995;1;4.000;data/VRPSDConsensus.conf;[36063678, 36063679, 36063680, 36063681, 36063682, 36063683];NORMAL;0.294
+94;i_40r1c116;40;116;275;7.435;6.530;0;4.000;data/VRPSDConsensus.conf;[36064170, 36064171, 36064172, 36064173, 36064174, 36064175];NORMAL;0.139
+64;i_60r2c175;60;175;440;9.728;9.535;0;6.000;data/VRPSDConsensus.conf;[54245808, 54245809, 54245810, 54245811, 54245812, 54245813];NORMAL;0.020

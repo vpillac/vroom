@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+	VroomModeling build file
+	Author: Victor Pillac
+	Version: 28/06/2011
+-->
+<project basedir="." default="build" name="vroom_modeling">
+	<import file="build-common.xml"/>
+	
+	<!-- Project version		-->
+	<property name="version" value="1" description="The built version of this project"/>
+
+
+	<!-- Classpath -->	
+	<path id="javac.classpath">
+		<pathelement location="${jar.VroomUtilities}"/>
+        <pathelement location="${bin.dir}"/>
+        <path refid="junit4.libraryclasspath"/>
+        <path refid="log4j.libraryclasspath"/>
+        <path refid="ssj.libraryclasspath"/>
+        <path refid="jung.libraryclasspath"/>
+        <fileset refid="runtime.libs"/>
+        <fileset refid="dependencies.libs"/>
+    </path>
+    <property name="javac.classpathprop" refid="javac.classpath"/>
+	
+	<!-- Javadoc parameters -->
+	<property name="javadoc.author" value="Victor Pillac, EMN, France, Uniandes, Colombia"/>
+	<property name="javadoc.windowtitle" value="VroomModeling javadoc - A generic library for the representation of VRP"/>
+
+	<property name="javadoc.encoding.used" value="UTF-8"/>
+	<property name="javadoc.private" value="true"/>
+	<property name="javadoc.use" value="true"/>
+	<property name="javadoc.version" value="true"/>
+	
+	<!-- Other projects information -->
+	<property name="jMSA.lib.dir" value="${jMSA.location}/lib"/>
+
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="${jMSA.location}/build.xml" dir="${jMSA.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${jMSA.location}/build.xml" dir="${jMSA.location}" inheritAll="false" target="build"/>
+    </target>
+
+	
+</project>

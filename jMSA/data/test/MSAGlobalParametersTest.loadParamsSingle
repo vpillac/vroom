@@ -1,0 +1,4 @@
+#Created by vroom.common.utilities.params.ParametersFilePersistenceDelegate 
+#Date: Thu Oct 21 10:45:01 COT 2010
+#Thu Oct 21 10:45:01 COT 2010
+SCENARIO_OPTIMIZER_CLASS=vroom.optimization.online.jmsa.components.ScenarioOptimizerBase

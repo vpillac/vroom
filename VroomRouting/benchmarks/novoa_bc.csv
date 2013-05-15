@@ -1,0 +1,22 @@
+% CVRPSolverTest
+instance;size;capacity;solver;obj;time;iterations;status
+i_5r1c9;5;9,000;cvrp_bc;3,108;71;3;OPTIMAL
+i_5r2c9;5;9,000;cvrp_bc;3,129;7;3;OPTIMAL
+i_5r3c9;5;9,000;cvrp_bc;4,107;8;3;OPTIMAL
+i_5r4c9;5;9,000;cvrp_bc;3,418;8;3;OPTIMAL
+i_5r5c9;5;9,000;cvrp_bc;4,504;18;7;OPTIMAL
+i_5r1c5;5;5,000;cvrp_bc;4,373;49;5;OPTIMAL
+i_5r2c5;5;5,000;cvrp_bc;4,361;12;5;OPTIMAL
+i_5r3c5;5;5,000;cvrp_bc;6,666;7;3;OPTIMAL
+i_5r4c5;5;5,000;cvrp_bc;5,015;32;9;OPTIMAL
+i_5r5c5;5;5,000;cvrp_bc;7,264;13;4;OPTIMAL
+i_8r1c14;8;14,000;cvrp_bc;4,205;22;6;OPTIMAL
+i_8r2c14;8;14,000;cvrp_bc;4,245;15;4;OPTIMAL
+i_8r3c14;8;14,000;cvrp_bc;4,553;19;5;OPTIMAL
+i_8r4c14;8;14,000;cvrp_bc;3,506;31;5;OPTIMAL
+i_8r5c14;8;14,000;cvrp_bc;4,359;16;5;OPTIMAL
+i_8r1c9;8;9,000;cvrp_bc;5,224;559;16;OPTIMAL
+i_8r2c9;8;9,000;cvrp_bc;5,995;43;9;OPTIMAL
+i_8r3c9;8;9,000;cvrp_bc;5,782;49;8;OPTIMAL
+i_8r4c9;8;9,000;cvrp_bc;4,378;35;9;OPTIMAL
+i_8r5c9;8;9,000;cvrp_bc;5,192;28;8;OPTIMAL

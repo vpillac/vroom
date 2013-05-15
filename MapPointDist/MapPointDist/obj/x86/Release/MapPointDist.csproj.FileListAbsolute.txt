@@ -1,0 +1,7 @@
+C:\Users\Victor Pillac\assembla\MapPointDist\MapPointDist\bin\Release\MapPointDist.exe.config
+C:\Users\Victor Pillac\assembla\MapPointDist\MapPointDist\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Victor Pillac\assembla\MapPointDist\MapPointDist\bin\Release\MapPointDist.exe
+C:\Users\Victor Pillac\assembla\MapPointDist\MapPointDist\bin\Release\MapPointDist.pdb
+C:\Users\Victor Pillac\assembla\MapPointDist\MapPointDist\bin\Release\Interop.MapPoint.dll
+C:\Users\Victor Pillac\assembla\MapPointDist\MapPointDist\obj\x86\Release\MapPointDist.exe
+C:\Users\Victor Pillac\assembla\MapPointDist\MapPointDist\obj\x86\Release\MapPointDist.pdb

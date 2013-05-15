@@ -1,0 +1,70 @@
+#/bin/bash.sh
+
+# An error exit function
+error_exit()
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+clear
+
+echo "---------------------------------------------"
+echo "Cleaning all projects"
+ant cleanall
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while cleaning the project, aborting"
+fi
+echo "Building the project"
+ant build build-bench-project
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while building the project, aborting"
+fi
+echo "---------------------------------------------"
+
+# default values
+#Get the currently free memory
+freemem=`free -m | grep Mem:`
+freemem=`echo $freemem |cut -d' ' -f4`
+
+echo "------------------------"
+echo "${freemem}Mb of memory available"
+echo "------------------------"
+echo ""
+maxFreememProp=0.8
+Xmx=`echo "$maxFreememProp * $freemem" | bc`
+Xmx=`printf %.0f $Xmx`
+Xms=256
+if [ $Xms -gt $Xmx ]; then
+  Xmx=$Xms
+fi
+
+gurobi=gurobi460
+main=vroom.trsp.bench.DTRSPStaticSolver
+classpath="./bin:../Libraries/vroom_heuristics/vroom_heuristics.jar:../Libraries/vroom_utilities/vroom_utilities.jar:../Libraries/vroom_modelling/vroom_modelling.jar:../Libraries/log4j-1.2.15/log4j-1.2.15.jar:../Libraries/ssj-20091109/ssj.jar:../Libraries/${gurobi}/gurobi.jar"
+javalib="/opt/${gurobi}/linux64/lib"
+args=$*
+
+clear
+dir=`pwd`
+cd /usr/bin
+boinccmd --set_run_mode never
+cd $dir
+echo "Pausing boinc: $?"
+echo "---------------------------------------------"
+echo "Running benchmarks"
+echo "args:    ${args}"
+echo "Classpath: ${classpath}"
+echo "Main type: ${main}"
+echo "${javaalt}java -Xms${Xms}m -Xmx${Xmx}m -cp ${classpath} ${main} ${args}"
+echo "---------------------------------------------"
+
+${javaalt}java -server -Xms${Xms}m -Xmx${Xmx}m -cp "${classpath}" -Djava.library.path=${javalib} ${main} ${args}
+
+cd /usr/bin
+boinccmd --set_run_mode auto
+cd $dir

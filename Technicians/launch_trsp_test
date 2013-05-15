@@ -1,0 +1,58 @@
+#/bin/bash.sh
+
+# An error exit function
+error_exit()
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+# default values
+#Get the currently free memory
+freemem=`free -m | grep Mem:`
+freemem=`echo $freemem |cut -d' ' -f4`
+
+
+echo "${freemem}Mb available"
+
+Xmx="${freemem}m"
+Xms="256m"
+
+echo "---------------------------------------------"
+echo "Cleaning all projects"
+ant cleanall
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while cleaning the project, aborting"
+fi
+echo "Building the project"
+ant build build-bench-project
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while building the project, aborting"
+fi
+echo "---------------------------------------------"
+
+main=vroom.trsp.bench.TRSPTest
+classpath="./bin:../Libraries/vroom_heuristics/vroom_heuristics.jar:../Libraries/vroom_utilities/vroom_utilities.jar:../Libraries/vroom_modelling/vroom_modelling.jar:../Libraries/log4j-1.2.15/log4j-1.2.15.jar:../Libraries/ssj-20091109/ssj.jar:../Libraries/gurobi451/gurobi.jar"
+javalib="/opt/gurobi/lib"
+args=$*
+
+boinccmd --set_run_mode never
+echo "Pausing boinc: $?"
+
+echo "---------------------------------------------"
+echo "Running TRSPTest"
+echo "args:    ${args}"
+echo "Classpath: ${classpath}"
+echo "Main type: ${main}"
+echo "java -Xms${Xms} -Xmx${Xmx} -cp ${classpath} -Djava.library.path=${javalib} ${main} ${args}"
+echo "---------------------------------------------"
+
+java -server -Xms${Xms} -Xmx${Xmx} -cp "${classpath}" -Djava.library.path=${javalib} ${main} ${args} -nv
+
+boinccmd --set_run_mode auto
+
+

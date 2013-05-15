@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    jMSA build file
+    Author: Victor Pillac
+	Version: 28/06/2011
+-->
+<project basedir="." default="build-test-project" name="jMSA">
+    <import file="build-common.xml"/>
+    
+    <!-- Project version        -->
+    <property name="version" value="1" description="The built version of this project"/>
+    
+	<!-- Classpath -->	
+	<path id="javac.classpath">
+        <pathelement location="${bin.dir}"/>
+		<pathelement location="${jar.VroomModeling}"/>
+		<pathelement location="${jar.VroomUtilities}"/>
+		<pathelement location="${jar.VroomRouting}"/>
+		<pathelement location="${jar.VroomHeuristics}"/>
+        <path refid="junit4.libraryclasspath"/>
+        <path refid="log4j.libraryclasspath"/>
+        <path refid="ssj.libraryclasspath"/>
+        <path refid="jung.libraryclasspath"/>
+        <fileset refid="runtime.libs"/>
+        <fileset refid="dependencies.libs"/>
+    </path>
+    <property name="javac.classpathprop" refid="javac.classpath"/>
+	
+    <!-- Javadoc parameters -->
+    <property name="javadoc.author" value="Victor Pillac, EMN, France, Uniandes, Colombia"/>
+    <property name="javadoc.windowtitle" value="jMSA javadoc - A generic framework for the Multipe Scenario Approach"/>
+
+    <property name="javadoc.encoding.used" value="UTF-8"/>
+    <property name="javadoc.private" value="true"/>
+    <property name="javadoc.use" value="true"/>
+    <property name="javadoc.version" value="true"/>
+    
+    <target depends="clean" name="cleanall">
+        <delete dir="${javadoc.common.project.dir}"/>
+        <ant antfile="${VroomModeling.location}/build.xml" dir="${VroomModeling.location}" inheritAll="false" target="cleanall"/>
+        <ant antfile="${VroomUtilities.location}/build.xml" dir="${VroomUtilities.location}" inheritAll="false" target="cleanall"/> 
+        <ant antfile="${VroomHeuristics.location}/build.xml" dir="${VroomHeuristics.location}" inheritAll="false" target="cleanall"/>
+        <ant antfile="${VroomRouting.location}/build.xml" dir="${VroomRouting.location}" inheritAll="false" target="cleanall"/>  
+    </target>
+    
+   <target name="-build-dependencies">
+        <echo message="Building the Utilities project"/>
+        <echo message="#----------------------------------------------------------"/>
+        <ant antfile="${VroomUtilities.location}/build.xml" dir="${VroomUtilities.location}" inheritAll="false" target="light-dist"/>
+        <echo message="#Utilities project built"/>
+        <echo message="#----------------------------------------------------------"/>
+                
+        
+        <echo message="Building the VroomModeling project"/>
+        <echo message="#----------------------------------------------------------"/>
+        <ant antfile="${VroomModeling.location}/build.xml" dir="${VroomModeling.location}" inheritAll="false" target="light-dist"/>
+        <echo message="#VroomModeling project built"/>
+        <echo message="#----------------------------------------------------------"/>
+        
+        
+        <echo message="Building the VroomHeuristics project"/>
+        <echo message="#----------------------------------------------------------"/>
+        <ant antfile="${VroomHeuristics.location}/build.xml" dir="${VroomHeuristics.location}" inheritAll="false" target="light-dist"/>
+        <echo message="#VroomHeuristics project built"/>
+        <echo message="#----------------------------------------------------------"/>
+    
+    
+	    <echo message="Building the VroomRouting project"/>
+	    <echo message="#----------------------------------------------------------"/>
+	    <ant antfile="${VroomRouting.location}/build.xml" dir="${VroomRouting.location}" inheritAll="false" target="light-dist"/>
+	    <echo message="#VroomRouting project built"/>
+	    <echo message="#----------------------------------------------------------"/>
+    </target>
+    
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: -copy-libs - Copy the libraries of the classpath to the destination folder                     
+         - - - - - - - - - - - - - - - - - -->
+    <target name="copy-libs" description="Copy the libraries of the classpath to the destination folder">
+        <echo message="Copying runtime libraries to ${dist.dir}"/>
+        <copy todir="${dist.dir}">
+            <fileset refid="runtime.libs"/>
+        </copy> 
+    </target>
+
+
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="${jMSA.location}/build.xml" dir="${jMSA.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${jMSA.location}/build.xml" dir="${jMSA.location}" inheritAll="false" target="build"/>
+    </target>
+    
+
+</project>

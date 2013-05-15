@@ -1,0 +1,25 @@
+#/bin/bash.sh
+
+# An error exit function
+error_exit()
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+echo "========================================================="
+echo "Cleaning all projects"
+ant -q cleanall
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while cleaning the project, aborting"
+fi
+echo "Building project and dependencies"
+ant build -q build-bench-project
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while building the project, aborting"
+fi
+echo "========================================================="

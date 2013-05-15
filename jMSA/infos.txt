@@ -1,0 +1,7 @@
+screen
+
+#disconnect
+ctrl+A d 
+
+#reconnect
+screen -d

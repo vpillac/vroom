@@ -1,0 +1,1 @@
+xjc -p vroom.common.modeling.vrprep VRPRep_FileStructure_Schema.xsd -d ../src/

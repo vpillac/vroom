@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- vroom common build file Author: Victor Pillac Version: 28/06/2011 -->
+<project basedir="." default="copy-build-commons">
+
+	<tstamp>
+		<format property="date" pattern="yyyyMMdd" />
+	</tstamp>
+
+	<property environment="env" />
+	<property name="ECLIPSE_HOME" value="/home/victor/eclipse/eclipse-jee-galileo-SR1" />
+
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="javac.target" value="1.7" />
+	<property name="javac.source" value="1.7" />
+
+	<!-- Project directories -->
+	<property name="lib.dir" value="lib" />
+	<property name="src.dir" value="src" />
+	<property name="bench.dir" value="bench" />
+	<property name="gui.dir" value="gui" />
+	<property name="test.dir" value="test" />
+	<property name="bin.dir" value="bin" />
+	<property name="dist.dir" value="dist" />
+	<property name="doc.dir" value="doc" />
+
+	<!-- Distribution files -->
+	<property name="jar.file" value="${ant.project.name}" />
+	<property name="doc.file" value="${jar.file}-doc" />
+	<property name="src.file" value="${jar.file}-src" />
+
+	<property name="jar.file.path" value="${dist.dir}/${jar.file}" />
+	<property name="doc.file.path" value="${dist.dir}/${doc.file}" />
+	<property name="src.file.path" value="${dist.dir}/${src.file}" />
+
+	<property name="project.jar.file" value="${ant.project.name}-project-${date}" />
+	<property name="project.jar.path" value="../Projects/${project.jar.file}" />
+
+
+	<!-- Javadoc parameters -->
+
+	<property name="javadoc.author"
+		value="Victor Pillac, EMN, France, Uniandes, Colombia" />
+	<property name="javadoc.windowtitle" value="" />
+
+	<property name="javadoc.encoding.used" value="UTF-8" />
+	<property name="javadoc.private" value="true" />
+	<property name="javadoc.use" value="true" />
+	<property name="javadoc.version" value="true" />
+
+
+	<!-- Other projects information -->
+	<property name="libraries.dir" value="../Libraries" />
+
+	<property name="VroomModeling.location" value="../VroomModeling" />
+	<property name="jMSA.location" value="../jMSA" />
+	<property name="VroomUtilities.location" value="../VroomUtilities" />
+	<property name="VroomRouting.location" value="../VroomRouting" />
+	<property name="VroomHeuristics.location" value="../VroomHeuristics" />
+	<property name="Technicians.location" value="../Technicians" />
+
+	<property name="VroomModeling.lib" value="${VroomModeling.location}/lib" />
+	<property name="jMSA.lib" value="${jMSA.location}/lib" />
+	<property name="VroomUtilities.lib" value="${VroomUtilities.location}/lib" />
+	<property name="VroomRouting.lib" value="${VroomRouting.location}/lib" />
+	<property name="VroomHeuristics.lib" value="${VroomHeuristics.location}/lib" />
+	<property name="Technicians.lib" value="$Technicians.location}/lib" />
+
+	<property name="jar.VroomModeling"
+		value="${libraries.dir}/vroom_modeling/vroom_modeling.jar" />
+	<property name="jar.jMSA" value="${libraries.dir}/jMSA/jMSA.jar" />
+	<property name="jar.VroomUtilities"
+		value="${libraries.dir}/vroom_utilities/vroom_utilities.jar" />
+	<property name="jar.VroomRouting"
+		value="${libraries.dir}/vroom_routing/vroom_routing.jar" />
+	<property name="jar.VroomHeuristics"
+		value="${libraries.dir}/vroom_heuristics/vroom_heuristics.jar" />
+	<property name="jar.Technicians" value="${libraries.dir}/trsp/trsp.jar" />
+
+	<property name="doc.VroomModeling"
+		value="${libraries.dir}/vroom_modeling/vroom_modeling-doc.zip" />
+	<property name="doc.jMSA" value="${libraries.dir}/jMSA/jMSA-doc.zip" />
+	<property name="doc.VroomUtilities"
+		value="${libraries.dir}/vroom_utilities-doc.zip/vroom_utilities-doc.zip" />
+	<property name="doc.VroomRouting"
+		value="${libraries.dir}/vroom_routing/vroom_routing-doc.zip" />
+	<property name="doc.VroomHeuristics"
+		value="${libraries.dir}/vroom_heuristics/vroom_heuristics-doc.zip" />
+	<property name="doc.Technicians" value="${libraries.dir}/trsp/trsp-doc.zip" />
+
+
+	<!-- Class pathes -->
+	<path id="junit4.libraryclasspath">
+		<pathelement location="${libraries.dir}/jUnit-4.8.2/junit-4.8.2.jar" />
+	</path>
+
+	<path id="log4j.libraryclasspath">
+		<pathelement location="${libraries.dir}/log4j-1.2.15/log4j-1.2.15.jar" />
+	</path>
+
+	<path id="cplex12.3.libraryclasspath">
+		<pathelement location="${libraries.dir}/cplex-12.3/cplex.jar" />
+	</path>
+
+	<path id="ssj.libraryclasspath">
+		<fileset id="ssj.lib" dir="${libraries.dir}/ssj-20091109">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="jung.libraryclasspath">
+		<fileset id="jung.lib" dir="${libraries.dir}/jung2-2_0_1">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="gurobi301.libraryclasspath">
+		<pathelement location="${libraries.dir}/gurobi301/gurobi.jar" />
+	</path>
+
+	<path id="gurobi451.libraryclasspath">
+		<fileset id="gurobi451.lib" dir="${libraries.dir}/gurobi451">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="gurobi460.libraryclasspath">
+		<fileset id="gurobi460.lib" dir="${libraries.dir}/gurobi460">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="gurobi.libraryclasspath">
+		<fileset id="gurobi.lib" dir="${libraries.dir}/gurobi460">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="forms130.libraryclasspath">
+		<fileset id="forms130.lib" dir="${libraries.dir}/forms-1.3.0">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<fileset id="runtime.libs" dir="${lib.dir}">
+		<include name="*.jar" />
+		<exclude name="*doc.jar" />
+	</fileset>
+
+	<fileset id="dependencies.libs" dir="${libraries.dir}">
+		<exclude name="**/*" />
+	</fileset>
+
+	<!-- <path id="javac.classpath"> <pathelement location="${bin.dir}"/> <path 
+		refid="dependencies.classpath"/> <path refid="junit4.libraryclasspath"/> 
+		<path refid="log4j.libraryclasspath"/> <fileset refid="runtime.libs"/> <fileset 
+		refid="dependencies.libs"/> </path> <property name="javac.classpathprop" 
+		refid="javac.classpath"/> -->
+
+	<!--  target: copy-buil-commons - copy 
+		this build file to all the projects  -->
+	<target name="copy-build-commons" description="copy this build file to all the projects">
+		<copy file="build-common.xml" todir="${VroomModeling.location}" />
+		<copy file="build-common.xml" todir="${jMSA.location}" />
+		<copy file="build-common.xml" todir="${VroomUtilities.location}" />
+		<copy file="build-common.xml" todir="${VroomRouting.location}" />
+		<copy file="build-common.xml" todir="${VroomHeuristics.location}" />
+		<copy file="build-common.xml" todir="${Technicians.location}" />
+	</target>
+
+
+	<!--  target: init  -->
+	<target name="init">
+		<mkdir dir="${bin.dir}" />
+		<copy includeemptydirs="false" todir="${bin.dir}">
+			<fileset dir="${src.dir}">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+
+		<copy includeemptydirs="false" todir="${bin.dir}">
+			<fileset dir="${test.dir}">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+
+		<copy includeemptydirs="false" todir="${bin.dir}">
+			<fileset dir="${bench.dir}">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<echo level="info" message="${ant.project.name}: Cleaning project ${ant.project.name}" />
+		<delete dir="${bin.dir}" />
+		<delete dir="${doc.dir}" />
+	</target>
+
+	<target depends="clean" name="cleanall">
+		<!-- No subproject -->
+	</target>
+
+
+	<target name="-prebuild" description="Detects the libraries in the lib folder">
+		<echo level="info"
+			message="${ant.project.name}: Detecting libraries for ${ant.project.name}" />
+
+		<fileset id="runtime.libs" dir="${lib.dir}">
+			<include name="*.jar" />
+			<exclude name="*doc.jar" />
+		</fileset>
+	</target>
+
+	<target name="-build-dependencies">
+		<!-- No dsubproject -->
+	</target>
+
+	<target name="build-no-dep" depends="-prebuild,-build-project"
+		description="Build this project without dependencies">
+		<!-- Project build in dependencies -->
+	</target>
+
+	<target name="build" depends="-build-dependencies,-prebuild,-build-project"
+		description="Build the project and all its dependencies">
+		<!-- Project build in dependencies -->
+	</target>
+
+	<!--  -build-project: javadoc - Builds 
+		project itself  -->
+	<target depends="init" name="-build-project" description="Builds project itself">
+		<echo level="info" message="${ant.project.name}: ${ant.file}" />
+
+		<echo level="info" message="${ant.project.name}: Building the ${src.dir} directory" />
+
+		<javac includeantruntime="false" debug="off" destdir="${bin.dir}"
+			source="${javac.source}" target="${javac.target}" verbose="no">
+			<src path="${src.dir}" />
+			<classpath refid="javac.classpath" />
+		</javac>
+	</target>
+
+	<target depends="-build-project" name="build-test-project"
+		description="Builds project test classes">
+		<echo level="info" message="${ant.project.name}: Building the ${test.dir} directory" />
+
+		<javac includeantruntime="false" debug="off" destdir="${bin.dir}"
+			source="${javac.source}" target="${javac.target}">
+			<src path="${test.dir}" />
+			<classpath refid="javac.classpath" />
+		</javac>
+	</target>
+
+	<target depends="-build-project" name="build-bench-project"
+		description="Builds project bench classes">
+		<echo level="info" message="${ant.project.name}: Building the ${bench.dir} directory" />
+
+		<javac includeantruntime="false" debug="off" destdir="${bin.dir}"
+			source="${javac.source}" target="${javac.target}">
+			<src path="${bench.dir}" />
+			<classpath refid="javac.classpath" />
+		</javac>
+	</target>
+
+	<target depends="build-bench-project" name="build-gui-project"
+		description="Builds project bench classes">
+		<echo level="info" message="${ant.project.name}: Building the ${bench.dir} directory" />
+
+		<javac includeantruntime="false" debug="off" destdir="${bin.dir}"
+			source="${javac.source}" target="${javac.target}">
+			<src path="${gui.dir}" />
+			<classpath refid="javac.classpath" />
+		</javac>
+	</target>
+	<!--  target: javadoc - Builds the javadoc 
+		for this project  -->
+	<target name="javadoc" depends="init"
+		description="Builds the javadoc for this project">
+		<mkdir dir="${doc.dir}" />
+
+		<javadoc author="${javadoc.author}" charset="UTF-8"
+			docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true"
+			private="${javadoc.private}" use="${javadoc.use}" useexternalfile="true"
+			version="${javadoc.version}" windowtitle="${javadoc.windowtitle}"
+			source="${javac.source}" destdir="${doc.dir}">
+			<classpath refid="javac.classpath" />
+
+			<fileset dir="${src.dir}">
+				<filename name="**/*.java" />
+			</fileset>
+
+		</javadoc>
+	</target>
+
+	<target name="package-source" >
+		<zip destfile="${src.file.path}.zip" basedir="${src.dir}" />
+	</target>
+	
+	<!-- target: -copy-libs - Copy the libraries 
+		of the classpath to the destination folder
+		-->
+	<target name="copy-libs"
+		description="Copy the libraries of the classpath to the destination folder">
+		<echo level="info" message="${ant.project.name}: Copying runtime libraries to ${dist.dir}" />
+		<copy todir="${dist.dir}">
+			<fileset refid="runtime.libs" />
+		</copy>
+	</target>
+
+
+
+	<!--  target: dist - Publish the compiled 
+		code and its documentation  -->
+	<target name="dist" depends="light-dist,javadoc,package-source"
+		description="Publish the compiled code and its documentation">
+
+		<echo  level="info"
+			message="${ant.project.name}: Creating javadoc archive ${doc.file.path}.zip" />
+		<zip destfile="${doc.file.path}.zip" basedir="${doc.dir}" />
+
+		<echo level="info"
+			message="${ant.project.name}: Copying the documentation and source code to ${libraries.dir}/${ant.project.name}/" />
+		<copy todir="${libraries.dir}/${ant.project.name}">
+			<fileset dir="${dist.dir}">
+				<include name="${doc.file}.zip" />
+				<include name="${src.file}.zip" />
+			</fileset>
+		</copy>
+
+		<delete dir="${doc.dir}" />
+
+	</target>
+
+	<target name="light-dist" depends="build-no-dep"
+		description="Publish the compiled code WITHOUT its documentation">
+
+		<mkdir dir="${dist.dir}" />
+
+		<echo level="info"
+			message="${ant.project.name}: Creating package jar file ${jar.file.path}.jar" />
+		<jar destfile="${jar.file.path}.jar" basedir="${bin.dir}"></jar>
+
+		<echo level="info"
+			message="${ant.project.name}: Copying the libraries to ${libraries.dir}/${ant.project.name}/" />
+		<copy todir="${libraries.dir}/${ant.project.name}">
+			<fileset dir="${dist.dir}">
+				<include name="${jar.file}.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+
+	<target
+		description="Build all projects which reference this project. Useful to propagate changes."
+		name="build-refprojects">
+	</target>
+
+	<!--  target: build-doc-dist - Build the 
+		project and its javadoc and publish it  -->
+	<target name="build-doc-dist" depends="build,javadoc,dist,copy-libs"
+		description="Build the project and its javadoc and publish it">
+		<jar destfile="${project.jar.path}.jar">
+			<fileset dir=".">
+				<include name="${src.dir}/**/*.java" />
+				<include name="${test.dir}/**/*.java" />
+				<include name="${jar.file.path}*" />
+				<include name="${doc.dir}/*" />
+				<include name="*.xml" />
+				<include name=".classpath" />
+				<include name=".project" />
+			</fileset>
+		</jar>
+	</target>
+
+</project>

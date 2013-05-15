@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="bench"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="gui"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Gurobi461"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomHeuristics"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomModeling"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/VroomUtilities"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Log4j-1.2.15"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SSJ"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jung2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Cplex-12.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Gurobi460"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jMSA"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Forms-1.3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/vrprep-objects"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

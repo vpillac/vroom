@@ -1,0 +1,6 @@
+#==================== COMMENTS ====================
+CVRPSolverTest
+#==================================================
+
+
+instance;size;capacity;solver;obj;time;status

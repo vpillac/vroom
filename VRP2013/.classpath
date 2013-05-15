@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="solutions"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VRP2013/lib/log4j-1.2.15-doc.jar!/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/ssj.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VRP2013/lib/ssj-doc.zip!/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/cplex-12.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VRP2013/lib/cplex-12.5-doc.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/vroom_heuristics.jar" sourcepath="lib/vroom_heuristics-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VRP2013/lib/vroom_heuristics-doc.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/vroom_modeling.jar" sourcepath="lib/vroom_modeling-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VRP2013/lib/vroom_modeling-doc.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/vroom_utilities.jar" sourcepath="lib/vroom_utilities-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VRP2013/lib/vroom_utilities-doc.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

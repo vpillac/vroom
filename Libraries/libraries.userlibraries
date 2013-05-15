@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="Cplex-12.3" systemlibrary="false">
+        <archive nativelibpaths="/opt/cplex/cplex/bin/x86-64_sles10_4.1" path="/Libraries/cplex-12.3/cplex.jar"/>
+    </library>
+    <library name="Forms-1.3.0" systemlibrary="false">
+        <archive path="/Libraries/forms-1.3.0/forms-1.3.0.jar" source="/Libraries/forms-1.3.0/forms-1.3.0-src.zip"/>
+    </library>
+    <library name="Gurobi301" systemlibrary="false">
+        <archive path="/Libraries/gurobi301/gurobi.jar"/>
+    </library>
+    <library name="Gurobi451" systemlibrary="false">
+        <archive path="/Libraries/gurobi451/gurobi.jar"/>
+    </library>
+    <library name="Gurobi460" systemlibrary="false">
+        <archive path="/Libraries/gurobi460/gurobi.jar"/>
+    </library>
+    <library name="Jak" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Libraries/jak/JavaAPIforKml-apidocs.zip!/apidocs" path="/Libraries/jak/JavaAPIforKml.jar" source="/Libraries/jak/JavaAPIforKml-sources.jar"/>
+        <archive path="/Libraries/jaxb-2.2.4-1/jaxb-impl-2.2.4-1.jar"/>
+        <archive path="/Libraries/jaxb-2.2.4-1/jaxb-xjc-2.2.4-1.jar"/>
+    </library>
+    <library name="JAXB" systemlibrary="false">
+        <archive path="/Libraries/jaxb-2.2.4-1/jaxb-impl-2.2.4-1.jar"/>
+        <archive path="/Libraries/jaxb-2.2.4-1/jaxb-xjc-2.2.4-1.jar"/>
+    </library>
+    <library name="Jung2" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/collections-generic-4.01.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/colt-1.2.0.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/concurrent-1.3.4.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/j3d-core-1.3.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/jung-3d-2.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/jung-algorithms-2.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/jung-api-2.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/jung-graph-impl-2.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/jung-io-2.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/jung-jai-2.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/jung-visualization-2.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/stax-api-1.0.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/vecmath-1.3.1.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/jung2-2_0_1/jung-doc.zip!/" path="/Libraries/jung2-2_0_1/wstx-asl-3.2.6.jar"/>
+    </library>
+    <library name="JUnit 4" systemlibrary="false">
+        <archive path="/Libraries/jUnit-4.8.2/junit-4.8.2.jar"/>
+    </library>
+    <library name="Log4j-1.2.15" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Libraries/log4j-1.2.15/log4j-1.2.15-doc.jar!/api" path="/Libraries/log4j-1.2.15/log4j-1.2.15.jar"/>
+    </library>
+    <library name="SSJ" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Libraries/ssj-20091109/ssj-doc.zip!/api" path="/Libraries/ssj-20091109/ssj.jar"/>
+    </library>
+</eclipse-userlibraries>

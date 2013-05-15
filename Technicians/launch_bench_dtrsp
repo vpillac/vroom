@@ -1,0 +1,14 @@
+# /bin/bash.rc
+./build_trsp
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  echo "## Error while building the project, aborting"
+  exit 1
+fi
+
+#pALNS Diversity pool + Noise
+#./launch_trsp config/bench/bench_palns_mpa_25crew.cfg  -c DTRSP_pALNS
+
+# MPA
+./launch_trsp config/bench/bench_dtrsp_mpa_25crew.cfg  -c DTRSP_MPA	

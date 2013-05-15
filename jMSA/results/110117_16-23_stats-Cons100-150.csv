@@ -1,0 +1,54 @@
+#==================== COMMENTS ====================
+Date: Mon Jan 17 16:23:34 CET 2011
+Demand distribution: UNIFORM
+MSA:
+DefaultComponentManager
+Scenario Generator:
+ VRPSDScenarioGenerator
+Scenario Optimizer:
+ VRPSDSVScenarioOptimizer 
+Init (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@16a4e743):VersatileLocalSearch (ns=1,ni=0,nc=0,maxTime=60000,stop=vroom.optimization.online.jmsa.MSABase$MSAProxy$MSABaseStoppingCriterion@16a4e743)
+ Init:MSACWInitialization (ClarkeAndWrightHeuristic Algo:MSACWSavingsHeuristic)
+ Pertub:Identity
+ LS:VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Opt (maxT:10000,maxIt:10000,BI,det): VariableNeighborhoodSearch 
+ Shake:[StringExchangeNeighborhood (maxLenght:3), StringExchangeNeighborhood (maxLenght:4)] (maxT:none,maxIt:none,NI,rnd)
+ LS:VariableNeighborhoodSearch 
+ Shake: Identity 
+ LS:[SwapNeighborhood, RelocateNeighborhood(1), TwoOptNeighborhood, OrOptNeighborhood (maxLenght:3)] (maxT:none,maxIt:none,BI,det) (maxT:none,maxIt:none,BI,det)
+Scenario Updater:
+ VRPSDScenarioUpdater
+Solution Builder:
+ VRPSDConsensus
+Pool Cleaner:
+ VRPPoolCleanerBase
+Request Sampler:
+ VRPRequestSamplerBase
+Request Validator:
+ VRPRequestValidatorBase
+
+
+#==================================================
+
+
+run_id;instance_name;size;vehicle_capacity;running_time;cost;perf_inf;failures;speed;comment;seeds;status;gap_pi
+0;i_100r1c457;100;457;833;9.272;8.670;0;10.000;data/VRPSDConsensus.conf;[90009000, 90009001, 90009002, 90009003, 90009004, 90009005];NORMAL;0.069
+1;i_100r1c457;100;457;776;9.175;8.699;0;10.000;data/VRPSDConsensus.conf;[90009006, 90009007, 90009008, 90009009, 90009010, 90009011];NORMAL;0.055
+2;i_100r1c457;100;457;826;8.974;8.724;0;10.000;data/VRPSDConsensus.conf;[90009012, 90009013, 90009014, 90009015, 90009016, 90009017];NORMAL;0.029
+3;i_100r1c457;100;457;810;9.023;8.670;0;10.000;data/VRPSDConsensus.conf;[90009018, 90009019, 90009020, 90009021, 90009022, 90009023];NORMAL;0.041
+4;i_100r1c457;100;457;899;9.577;8.707;0;10.000;data/VRPSDConsensus.conf;[90009024, 90009025, 90009026, 90009027, 90009028, 90009029];NORMAL;0.100
+5;i_100r1c457;100;457;870;8.956;8.688;0;10.000;data/VRPSDConsensus.conf;[90009030, 90009031, 90009032, 90009033, 90009034, 90009035];NORMAL;0.031
+6;i_100r1c457;100;457;859;9.309;8.707;0;10.000;data/VRPSDConsensus.conf;[90009036, 90009037, 90009038, 90009039, 90009040, 90009041];NORMAL;0.069
+7;i_100r1c457;100;457;873;9.090;8.707;0;10.000;data/VRPSDConsensus.conf;[90009042, 90009043, 90009044, 90009045, 90009046, 90009047];NORMAL;0.044
+8;i_100r1c457;100;457;810;8.996;8.699;0;10.000;data/VRPSDConsensus.conf;[90009048, 90009049, 90009050, 90009051, 90009052, 90009053];NORMAL;0.034
+9;i_100r1c457;100;457;825;8.891;8.670;0;10.000;data/VRPSDConsensus.conf;[90009054, 90009055, 90009056, 90009057, 90009058, 90009059];NORMAL;0.026
+10;i_100r1c457;100;457;833;9.601;8.707;0;10.000;data/VRPSDConsensus.conf;[90009060, 90009061, 90009062, 90009063, 90009064, 90009065];NORMAL;0.103
+11;i_100r1c457;100;457;872;10.048;8.738;0;10.000;data/VRPSDConsensus.conf;[90009066, 90009067, 90009068, 90009069, 90009070, 90009071];NORMAL;0.150
+12;i_100r1c457;100;457;880;9.240;8.728;0;10.000;data/VRPSDConsensus.conf;[90009072, 90009073, 90009074, 90009075, 90009076, 90009077];NORMAL;0.059
+14;i_100r1c457;100;457;812;9.023;8.707;0;10.000;data/VRPSDConsensus.conf;[90009084, 90009085, 90009086, 90009087, 90009088, 90009089];NORMAL;0.036
+15;i_100r1c457;100;457;846;9.207;8.707;0;10.000;data/VRPSDConsensus.conf;[90009090, 90009091, 90009092, 90009093, 90009094, 90009095];NORMAL;0.057
+16;i_100r1c457;100;457;840;9.078;8.703;0;10.000;data/VRPSDConsensus.conf;[90009096, 90009097, 90009098, 90009099, 90009100, 90009101];NORMAL;0.043

@@ -1,0 +1,45 @@
+#/bin/bash.sh
+
+# An error exit function
+error_exit()
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+echo "========================================================="
+echo "Cleaning all projects"
+ant -q cleanall
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while cleaning the project, aborting"
+fi
+echo "Building project and dependencies"
+ant build -q build-gui-project
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while building the project, aborting"
+fi
+echo "========================================================="
+
+main=vroom.trsp.bench.gui.DTRSPRunMPATest
+classpath="./bin:../Libraries/jMSA/jMSA.jar:../Libraries/vroom_heuristics/vroom_heuristics.jar:../Libraries/vroom_utilities/vroom_utilities.jar:../Libraries/vroom_modelling/vroom_modelling.jar:../Libraries/log4j-1.2.15/log4j-1.2.15.jar:../Libraries/ssj-20091109/ssj.jar:../Libraries/gurobi461/gurobi.jar:../Libraries/forms-1.3.0/forms-1.3.0.jar"
+javalib="/opt/gurobi/lib"
+args=$*
+
+boinccmd --set_run_mode never
+echo "Pausing boinc: $?"
+
+echo "---------------------------------------------"
+echo "Running TRSPTest"
+echo "args:    ${args}"
+echo "Classpath: ${classpath}"
+echo "Main type: ${main}"
+echo "java  -cp "${classpath}" -Djava.library.path=${javalib} ${main}"
+echo "---------------------------------------------"
+
+java  -cp "${classpath}" -Djava.library.path=${javalib} ${main}
+
+

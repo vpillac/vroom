@@ -1,0 +1,7 @@
+Nous avons constitué deux ensembles de données basées sur des plannings réels constitués par nos clients.
+Quelques remarques sur les données :
+- Chaque jeu de données contient le planning réalisé par deux clients sur la semaine du 5 au 10 décembre 2011.
+- Le jeu de données 7_4704 est urbain et basé sur la région parisienne, le jeu de données 13_370 est urbain et rural basé sur la région de Valence. Toutefois, nous n'avons pas de recul sur les vitesses moyennes de déplacement dans ces deux zones. Nous avons laissé la valeur 30km/h.
+- Nous avons réduit certains paramètres sur les déviances autorisées. Ainsi pour chaque intervention, il n'est pas possible de dévier de la plage horaire [time_window.start, time_window.end[ (nous avons mis les déviances sur 0). A priori, les interventions à réaliser rentrent dans le planning des techniciens fournis
+- Pour ces jeux de données, vous pouvez simplifier le problème en ignorant tout ce qui est basé sur les compétences : il y a une seule compétence, et tous les techniciens la possède.
+- Nous avons laissé la possibilité de faire faire 1h supplémentaire à 10% aux techniciens. En pratique cela arrive de temps en temps sur les plannings réels.

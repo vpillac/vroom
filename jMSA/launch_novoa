@@ -1,0 +1,40 @@
+#/bin/bash.sh
+
+# An error exit function
+error_exit()
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+if [ $# = 0 ]; then
+    echo "Arguments:"
+    echo " At least one of the two:"
+    echo "  -f benchFile            : benchmark file"
+    echo "  -e [sizes] [sets] nruns : benchmark definitions"
+    echo " Optional:"
+    echo "  -i file or [f1,f2]      : configuration file(s)"
+    echo "  -t num                  : number of threads"
+    echo "  -c comment              : comment for the log/stats files"
+    exit 1
+fi
+
+echo "---------------------------------------------"
+echo "Cleaning all projects"
+ant cleanall
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while cleaning the project, aborting"
+fi
+echo "Building the project"
+ant build build-bench-project
+if [ "$?" = "0" ]; then
+  echo " > OK"
+else
+  error_exit "## Error while building the project, aborting"
+fi
+echo "---------------------------------------------"
+
+./launch_novoa_nobuild $*
+

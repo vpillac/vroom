@@ -1,0 +1,180 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000000006db3ae00, pid=2576, tid=2888
+#
+# JRE version: 6.0_21-b07
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0-b17 mixed mode windows-amd64 )
+# Problematic frame:
+# V  [jvm.dll+0x2aae00]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000064b5800):  JavaThread "*** Profiler Agent Communication Thread" daemon [_thread_in_vm, id=2888, stack(0x0000000006860000,0x0000000006960000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000007da3ef0
+
+Registers:
+EAX=0x000000000695f301, EBX=0x00000000064b5800, ECX=0x0000000000209f30, EDX=0x00000000064b5800
+ESP=0x000000000695f310, EBP=0x0000000000209f30, ESI=0x000000000695f400, EDI=0x0000000007da3ef0
+EIP=0x000000006db3ae00, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x000000000695f310)
+0x000000000695f310:   0000000000002076 00000000800e17c8
+0x000000000695f320:   00000000064b5800 0000000007da3ef0
+0x000000000695f330:   00000000064b5800 0000000000000000
+0x000000000695f340:   0000000000000000 0000000000000000
+0x000000000695f350:   000000000695f4a8 00000000100034b2
+0x000000000695f360:   0000000000000000 00000000064b59c8
+0x000000000695f370:   00000000800e17c8 0000000007da3ef0
+0x000000000695f380:   00000000078abf30 000000006daa5761
+0x000000000695f390:   0000000002569dc3 00000000064c82a8
+0x000000000695f3a0:   000000000695f480 0000000080426000
+0x000000000695f3b0:   000000000695f400 000000000695f4a0
+0x000000000695f3c0:   000000000695f4b0 0000000080426000
+0x000000000695f3d0:   00000000800da030 0000000002525989
+0x000000000695f3e0:   00000000800e17c8 000000000695f480
+0x000000000695f3f0:   0000000080426000 0000000002531260
+0x000000000695f400:   00000000064c82e8 00000000064c82e8 
+
+Instructions: (pc=0x000000006db3ae00)
+0x000000006db3adf0:   00 b8 74 00 00 00 e9 0b 02 00 00 48 85 ff 74 50
+0x000000006db3ae00:   48 8b 3f 48 85 ff 74 48 48 b8 fe fe fe fe fe fe 
+
+
+Stack: [0x0000000006860000,0x0000000006960000],  sp=0x000000000695f310,  free space=3fc0000000000000000k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x2aae00]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.netbeans.lib.profiler.server.system.Stacks.getMethodNamesForJMethodIds(I[I[I)[B+0
+j  org.netbeans.lib.profiler.server.ProfilerInterface.getMethodNamesForJMethodIds([I)Lorg/netbeans/lib/profiler/wireprotocol/MethodNamesResponse;+18
+j  org.netbeans.lib.profiler.server.ProfilerServer.handleClientCommand(Lorg/netbeans/lib/profiler/wireprotocol/Command;)V+559
+j  org.netbeans.lib.profiler.server.ProfilerServer.listenToClient()V+48
+j  org.netbeans.lib.profiler.server.ProfilerServer.run()V+22
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000077c7000 JavaThread "Thread-8" daemon [_thread_blocked, id=4208, stack(0x000000000a120000,0x000000000a220000)]
+  0x00000000077c6800 JavaThread "NovoaRun-1" [_thread_blocked, id=4496, stack(0x0000000008d50000,0x0000000008e50000)]
+  0x0000000007901800 JavaThread "NovoaRun-0" [_thread_blocked, id=3688, stack(0x0000000008c50000,0x0000000008d50000)]
+  0x0000000007901000 JavaThread "Callbacks" [_thread_blocked, id=3044, stack(0x0000000008b50000,0x0000000008c50000)]
+  0x0000000007900000 JavaThread "Callbacks" [_thread_blocked, id=4364, stack(0x0000000008a50000,0x0000000008b50000)]
+  0x00000000078ff800 JavaThread "Callbacks" [_thread_blocked, id=2468, stack(0x0000000008950000,0x0000000008a50000)]
+  0x00000000078fe800 JavaThread "Callbacks" [_thread_blocked, id=4440, stack(0x0000000008850000,0x0000000008950000)]
+  0x00000000078d4000 JavaThread "Callback Thread" [_thread_blocked, id=2972, stack(0x0000000008750000,0x0000000008850000)]
+  0x0000000007846000 JavaThread "Callback Thread" [_thread_blocked, id=1048, stack(0x0000000008650000,0x0000000008750000)]
+  0x000000000662b800 JavaThread "BenchThread-1" [_thread_blocked, id=2244, stack(0x0000000008550000,0x0000000008650000)]
+  0x0000000007790800 JavaThread "BenchThread-0" [_thread_blocked, id=2820, stack(0x0000000008450000,0x0000000008550000)]
+  0x000000000665e800 JavaThread "UnlimitedAsyncAppender-Dispatcher-Thread-7" daemon [_thread_blocked, id=436, stack(0x0000000008350000,0x0000000008450000)]
+  0x0000000007b78800 JavaThread "UnlimitedAsyncAppender-Dispatcher-Thread-6" daemon [_thread_blocked, id=2924, stack(0x0000000007150000,0x0000000007250000)]
+  0x0000000007877800 JavaThread "*** Profiler Agent Special Execution Thread 3" daemon [_thread_blocked, id=4968, stack(0x0000000007a50000,0x0000000007b50000)]
+  0x0000000006541000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1552, stack(0x0000000007450000,0x0000000007550000)]
+  0x000000000653d000 JavaThread "CompilerThread1" daemon [_thread_blocked, id=3324, stack(0x0000000007350000,0x0000000007450000)]
+  0x000000000653c800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=5080, stack(0x0000000007250000,0x0000000007350000)]
+  0x00000000064d3800 JavaThread "*** Profiler Agent Special Execution Thread 6" daemon [_thread_blocked, id=4788, stack(0x0000000006c70000,0x0000000006d70000)]
+  0x00000000064d2800 JavaThread "*** JFluid Monitor thread ***" daemon [_thread_blocked, id=4452, stack(0x0000000006aa0000,0x0000000006ba0000)]
+=>0x00000000064b5800 JavaThread "*** Profiler Agent Communication Thread" daemon [_thread_in_vm, id=2888, stack(0x0000000006860000,0x0000000006960000)]
+  0x00000000064a1800 JavaThread "Attach Listener" daemon [_thread_blocked, id=4648, stack(0x0000000006760000,0x0000000006860000)]
+  0x000000000030f000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2856, stack(0x0000000006660000,0x0000000006760000)]
+  0x00000000002ef800 JavaThread "Finalizer" daemon [_thread_blocked, id=4396, stack(0x0000000006360000,0x0000000006460000)]
+  0x00000000002ea000 JavaThread "Reference Handler" daemon [_thread_blocked, id=4220, stack(0x0000000006260000,0x0000000006360000)]
+  0x000000000020d000 JavaThread "main" [_thread_blocked, id=1836, stack(0x0000000002420000,0x0000000002520000)]
+
+Other Threads:
+  0x00000000002e2800 VMThread [stack: 0x0000000006160000,0x0000000006260000] [id=5040]
+  0x00000000065b1000 WatcherThread [stack: 0x0000000007550000,0x0000000007650000] [id=644]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 684800K, used 18216K [0x00000000dcbf0000, 0x00000001087f0000, 0x00000001087f0000)
+  eden space 654272K, 2% used [0x00000000dcbf0000,0x00000000dddba230,0x0000000104ae0000)
+  from space 30528K, 0% used [0x0000000104ae0000,0x0000000104ae0000,0x00000001068b0000)
+  to   space 29760K, 0% used [0x0000000106ae0000,0x0000000106ae0000,0x00000001087f0000)
+ PSOldGen        total 349568K, used 67636K [0x00000000853f0000, 0x000000009a950000, 0x00000000dcbf0000)
+  object space 349568K, 19% used [0x00000000853f0000,0x00000000895fd3e8,0x000000009a950000)
+ PSPermGen       total 35136K, used 14673K [0x000000007fff0000, 0x0000000082240000, 0x00000000853f0000)
+  object space 35136K, 41% used [0x000000007fff0000,0x0000000080e44660,0x0000000082240000)
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042e000 	C:\Program Files\Java\jdk1.6.0_21\bin\java.exe
+0x0000000077bf0000 - 0x0000000077d9b000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000779d0000 - 0x0000000077aef000 	C:\Windows\system32\kernel32.dll
+0x000007fefdc40000 - 0x000007fefdcab000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe180000 - 0x000007fefe25b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007feffd30000 - 0x000007feffdcf000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe160000 - 0x000007fefe17f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007feffdd0000 - 0x000007feffefe000 	C:\Windows\system32\RPCRT4.dll
+0x000000006d890000 - 0x000000006df61000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\server\jvm.dll
+0x0000000077af0000 - 0x0000000077bea000 	C:\Windows\system32\USER32.dll
+0x000007fefeb50000 - 0x000007fefebb7000 	C:\Windows\system32\GDI32.dll
+0x000007fefeb40000 - 0x000007fefeb4e000 	C:\Windows\system32\LPK.dll
+0x000007fefe260000 - 0x000007fefe32a000 	C:\Windows\system32\USP10.dll
+0x000007fefb8c0000 - 0x000007fefb8fb000 	C:\Windows\system32\WINMM.dll
+0x000007fefdf20000 - 0x000007fefdf4e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe690000 - 0x000007fefe799000 	C:\Windows\system32\MSCTF.dll
+0x000000006d800000 - 0x000000006d80e000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\java.dll
+0x000000006d3b0000 - 0x000000006d3ba000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\hpi.dll
+0x0000000077dc0000 - 0x0000000077dc7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000010000000 - 0x000000001000b000 	C:\Program Files\NetBeans 6.9.1\profiler\lib\deployed\jdk16\windows-amd64\profilerinterface.dll
+0x000000006d850000 - 0x000000006d862000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\zip.dll
+0x000000006d6a0000 - 0x000000006d6b7000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\net.dll
+0x000007fefe380000 - 0x000007fefe3cd000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe5e0000 - 0x000007fefe5e8000 	C:\Windows\system32\NSI.dll
+0x000007fefd380000 - 0x000007fefd3d4000 	C:\Windows\system32\mswsock.dll
+0x000007fefd370000 - 0x000007fefd377000 	C:\Windows\System32\wship6.dll
+0x000007fefcd90000 - 0x000007fefcd97000 	C:\Windows\System32\wshtcpip.dll
+0x000000006d5e0000 - 0x000000006d5ea000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\management.dll
+0x000007fefd3e0000 - 0x000007fefd3f7000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefd0e0000 - 0x000007fefd127000 	C:\Windows\system32\rsaenh.dll
+0x000007fefcea0000 - 0x000007fefcebe000 	C:\Windows\system32\USERENV.dll
+0x000007fefdb50000 - 0x000007fefdb5f000 	C:\Windows\system32\profapi.dll
+0x000007fefda80000 - 0x000007fefda8f000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fefbb50000 - 0x000007fefbb65000 	C:\Windows\system32\NLAapi.dll
+0x000007fefd200000 - 0x000007fefd25b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef5fa0000 - 0x000007fef5fab000 	C:\Windows\System32\winrnr.dll
+0x000007fef5ea0000 - 0x000007fef5eb5000 	C:\Windows\system32\napinsp.dll
+0x000007fef5e70000 - 0x000007fef5e89000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefb680000 - 0x000007fefb690000 	C:\Windows\system32\wshbth.dll
+0x000007fefaf10000 - 0x000007fefaf37000 	C:\Windows\system32\IPHLPAPI.DLL
+0x000007fefaf00000 - 0x000007fefaf0b000 	C:\Windows\system32\WINNSI.DLL
+0x000007fef9650000 - 0x000007fef9658000 	C:\Windows\system32\rasadhlp.dll
+0x000007fefaa30000 - 0x000007fefaa83000 	C:\Windows\System32\fwpuclnt.dll
+0x000000006d6c0000 - 0x000000006d6cb000 	C:\Program Files\Java\jdk1.6.0_21\jre\bin\nio.dll
+
+VM Arguments:
+jvm_args: -agentpath:C:/Program Files/NetBeans 6.9.1/profiler/lib/deployed/jdk16/windows-amd64/profilerinterface.dll=C:\Program Files\NetBeans 6.9.1\profiler\lib,5140,10 -Xms512m -Xmx2100m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=D:\Documents Victor\Development\Repository\vroomrepo\Netbeans\jMSA\nbproject\private\profiler 
+java_command: vroom.optimization.online.jmsa.benchmarking.NovoaBenchmarking [30,40,60] [1] 10
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\MiKTeX 2.8\miktex\bin;C:\gurobi301\win64\bin;C:\xpressmp\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\SlikSvn\bin\
+USERNAME=Victor Pillac
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 6, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 6, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+Memory: 4k page, physical 4148396k(1929580k free), swap 8294892k(4985212k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (17.0-b17) for windows-amd64 JRE (1.6.0_21-b07), built on Jul 17 2010 01:05:36 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Mon Sep 06 15:51:48 2010
+elapsed time: 57 seconds
+

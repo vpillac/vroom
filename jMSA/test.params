@@ -1,0 +1,21 @@
+#Created by vroom.common.utilities.params.ParametersFilePersistenceDelegate 
+#Date: Thu Oct 21 10:32:02 COT 2010
+#Thu Oct 21 10:32:02 COT 2010
+OPT_MAX_SCEN_OPT_TIME=60
+SCENARIO_GENERATOR_CLASS=vroom.optimization.online.jmsa.vrp.vrpsd.VRPSDScenarioGenerator
+SOLUTION_BUILDER_CLASS=vroom.optimization.online.jmsa.vrp.vrpsd.VRPSDConsensus
+MIN_COMPATIBLE_SCEN_PROP=0.1
+POOL_CLEANER_CLASS=vroom.optimization.online.jmsa.vrp.VRPPoolCleanerBase
+MAX_THREADS=2
+REQUEST_VALIDATOR_CLASS=vroom.optimization.online.jmsa.vrp.VRPRequestValidatorBase
+ACTUAL_REQUEST_CLASS=vroom.optimization.online.jmsa.vrp.vrpsd.VRPSDActualRequest
+REQUEST_SAMPLER_CLASS=vroom.optimization.online.jmsa.vrp.VRPRequestSamplerBase
+POOL_SIZE=50
+SAMPLED_REQUEST_COUNT=10
+SOLUTION_FACTORY_CLASS=vroom.optimization.online.jmsa.vrp.MSAVRPSolutionFactory
+POOL_INITIAL_PROPORTION=0.7
+SCENARIO_OPTIMIZER_CLASS=vroom.optimization.online.jmsa.vrp.vrpsd.VRPSDSVScenarioOptimizer
+GEN_MAX_SCEN_OPT_TIME=5
+MIN_THREADS=1
+EVENT_FACTORY_CLASS=vroom.optimization.online.jmsa.events.MSAEventFactoryST
+SCENARIO_UPDATED_CLASS=vroom.optimization.online.jmsa.vrp.vrpsd.VRPSDScenarioUpdater

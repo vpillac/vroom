@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="VRP2013">
+
+	<property name="libraries.dir" value="../Libraries" />
+
+	<property name="VroomModeling.location" value="../VroomModeling" />
+	<property name="jMSA.location" value="../jMSA" />
+	<property name="VroomUtilities.location" value="../VroomUtilities" />
+	<property name="VroomRouting.location" value="../VroomRouting" />
+	<property name="VroomHeuristics.location" value="../VroomHeuristics" />
+	<property name="Technicians.location" value="../Technicians" />
+
+	<property name="jar.VroomModeling"
+			value="${libraries.dir}/vroom_modeling/vroom_modeling.jar" />
+	<property name="jar.jMSA" value="${libraries.dir}/jMSA/jMSA.jar" />
+	<property name="jar.VroomUtilities"
+			value="${libraries.dir}/vroom_utilities/vroom_utilities.jar" />
+	<property name="jar.VroomRouting"
+			value="${libraries.dir}/vroom_routing/vroom_routing.jar" />
+	<property name="jar.VroomHeuristics"
+			value="${libraries.dir}/vroom_heuristics/vroom_heuristics.jar" />
+	<property name="jar.Technicians" value="${libraries.dir}/trsp/trsp.jar" />
+
+	<property name="doc.VroomModeling"
+			value="${libraries.dir}/vroom_modeling/vroom_modeling-doc.zip" />
+	<property name="doc.jMSA" value="${libraries.dir}/jMSA/jMSA-doc.zip" />
+	<property name="doc.VroomUtilities"
+			value="${libraries.dir}/vroom_utilities/vroom_utilities-doc.zip" />
+	<property name="doc.VroomRouting"
+			value="${libraries.dir}/vroom_routing/vroom_routing-doc.zip" />
+	<property name="doc.VroomHeuristics"
+			value="${libraries.dir}/vroom_heuristics/vroom_heuristics-doc.zip" />
+	<property name="doc.Technicians" value="${libraries.dir}/trsp/trsp-doc.zip" />
+
+	<property name="src.VroomModeling"
+			value="${libraries.dir}/vroom_modeling/vroom_modeling-src.zip" />
+	<property name="src.jMSA" value="${libraries.dir}/jMSA/jMSA-src.zip" />
+	<property name="src.VroomUtilities"
+			value="${libraries.dir}/vroom_utilities/vroom_utilities-src.zip" />
+	<property name="src.VroomRouting"
+			value="${libraries.dir}/vroom_routing/vroom_routing-src.zip" />
+	<property name="src.VroomHeuristics"
+			value="${libraries.dir}/vroom_heuristics/vroom_heuristics-src.zip" />
+	<property name="src.Technicians" value="${libraries.dir}/trsp/trsp-src.zip" />
+
+	<property environment="env"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="target" value="1.7"/>
+	<property name="source" value="1.7"/>
+	<path id="VRP2013.classpath">
+		<pathelement location="bin"/>
+		<pathelement location="lib/log4j-1.2.15.jar"/>
+		<pathelement location="lib/vrprep-objects.jar"/>
+		<pathelement location="lib/cplex.jar"/>
+		<pathelement location="lib/vroom_modeling.jar"/>
+		<pathelement location="lib/vroom_utilities.jar"/>
+		<pathelement location="lib/vroom_heuristics.jar"/>
+	</path>
+	<target name="init">
+		<mkdir dir="bin"/>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.launch"/>
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="bin"/>
+	</target>
+	<target depends="clean" name="cleanall"/>
+	
+	<target depends="build-subprojects,build-project" name="build"/>
+	
+	<target name="build-subprojects" depends="build-dependencies"/>
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+			<src path="src"/>
+			<classpath refid="VRP2013.classpath"/>
+		</javac>
+	</target>
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	<target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+		<copy todir="${ant.library.dir}">
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+		</copy>
+		<unzip dest="${ant.library.dir}">
+			<patternset includes="jdtCompilerAdapter.jar"/>
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+		</unzip>
+	</target>
+	<target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+		<antcall target="build"/>
+	</target>
+	<target name="Test2">
+		<java classname="vrp2013.examples.Test2" failonerror="true" fork="yes">
+			<jvmarg line="-Djava.library.path=/Applications/IBM/ILOG/CPLEX_Studio125/cplex/bin/x86-64_darwin"/>
+			<classpath refid="VRP2013.classpath"/>
+		</java>
+	</target>
+	<target name="pGRASP">
+		<java classname="vrp2013.algorithms.pGRASP" failonerror="true" fork="yes">
+			<classpath refid="VRP2013.classpath"/>
+		</java>
+	</target>
+
+	<target name="build-dependencies">
+		<echo message="Building the Utilities project" />
+		<echo message="#----------------------------------------------------------" />
+		<ant antfile="${VroomUtilities.location}/build.xml" dir="${VroomUtilities.location}" inheritAll="false" target="dist" />
+		<echo message="#Utilities project built" />
+		<copy todir="./lib">
+			<fileset file="${jar.VroomUtilities}"/>
+			<fileset file="${doc.VroomUtilities}"/>
+			<fileset file="${src.VroomUtilities}"/>
+		</copy>
+		<echo message="#----------------------------------------------------------" />
+
+
+		<echo message="Building the VroomModeling project" />
+		<echo message="#----------------------------------------------------------" />
+		<ant antfile="${VroomModeling.location}/build.xml" dir="${VroomModeling.location}" inheritAll="false" target="dist" />
+		<echo message="#VroomModeling project built" />
+		<copy todir="./lib">
+			<fileset file="${jar.VroomModeling}"/>
+			<fileset file="${doc.VroomModeling}"/>
+			<fileset file="${src.VroomModeling}"/>
+		</copy>
+		<echo message="#----------------------------------------------------------" />
+
+
+		<echo message="Building the VroomHeuristics project" />
+		<echo message="#----------------------------------------------------------" />
+		<ant antfile="${VroomHeuristics.location}/build.xml" dir="${VroomHeuristics.location}" inheritAll="false" target="dist" />
+		<echo message="#VroomHeuristics project built" />
+		<copy todir="./lib">
+			<fileset file="${jar.VroomHeuristics}"/>
+			<fileset file="${doc.VroomHeuristics}"/>
+			<fileset file="${src.VroomHeuristics}"/>
+		</copy>
+		<echo message="#----------------------------------------------------------" />
+	</target>
+</project>

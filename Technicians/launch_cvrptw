@@ -1,0 +1,23 @@
+#/bin/sh
+#ALNS_PALNS_POOL_SIZE=10
+#ALNS_PALNS_IT_P=100
+
+./launch_trsp         config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_1_100_10 -t 1 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=100
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_2_100_10 -t 2 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=100
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_4_100_10 -t 4 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=100
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_8_100_10 -t 8 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=100
+
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_1_100_5 -t 1 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=100
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_2_100_5 -t 2 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=100
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_4_100_5 -t 4 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=100
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_8_100_5 -t 8 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=100
+
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_1_50_10 -t 1 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=50
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_2_50_10 -t 2 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=50
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_4_50_10 -t 4 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=50
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_8_50_10 -t 8 -s ALNS_PALNS_POOL_SIZE=10 -s ALNS_PALNS_IT_P=50
+
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_1_50_5 -t 1 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=50
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_2_50_5 -t 2 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=50
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_4_50_5 -t 4 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=50
+./launch_trsp_nobuild config/bench/bench_solomon_palns_4.cfg -c Solomon_pALNS_8_50_5 -t 8 -s ALNS_PALNS_POOL_SIZE=5 -s ALNS_PALNS_IT_P=50

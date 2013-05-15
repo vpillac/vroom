@@ -1,0 +1,15 @@
+Restored vrprep jaxb objects
+--This line, and those below, will be ignored--
+
+M    vrprep/SpeedProfile.java
+M    vrprep/Demand.java
+M    vrprep/Tw.java
+A    vrprep/Capacity.java
+M    vrprep/Time.java
+M    vrprep/ObjectFactory.java
+M    vrprep/NormalVariable.java
+M    vrprep/PoissonVariable.java
+M    vrprep/Instance.java
+M    vrprep/Location.java
+M    vrprep/Tool.java
+M    vrprep/Skill.java

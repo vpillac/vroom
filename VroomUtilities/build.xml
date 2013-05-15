@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+	vroom utilities build file
+	Author: Victor Pillac
+	Version: 28/06/2011
+-->
+<project basedir="." default="build" name="vroom_utilities">
+	<import file="build-common.xml"/>
+
+	<!-- Project version		-->
+	<property name="version" value="1" description="The build version of this project"/>
+
+
+	<!-- Classpath -->
+	<path id="javac.classpath">
+        <pathelement location="${bin.dir}"/>
+        <path refid="junit4.libraryclasspath"/>
+        <path refid="log4j.libraryclasspath"/>
+        <path refid="ssj.libraryclasspath"/>
+		<path refid="gurobi.libraryclasspath" />
+        <fileset refid="runtime.libs"/>
+        <fileset refid="dependencies.libs"/>
+    </path>
+    <property name="javac.classpathprop" refid="javac.classpath"/>
+
+	<!-- Javadoc parameters -->
+	<property name="javadoc.author" value="Victor Pillac, EMN, France, Uniandes, Colombia"/>
+	<property name="javadoc.windowtitle" value="jMSA javadoc - A generic framework for the Multipe Scenario Approach"/>
+
+	<property name="javadoc.encoding.used" value="UTF-8"/>
+
+    <property name="javadoc.link1"  value="../${javadoc.common.dir}/VroomModeling"/>
+
+
+    <target depends="clean" name="cleanall">
+    	<delete dir="${javadoc.common.project.dir}"/>
+    	<ant antfile="${VroomModeling.location}/build.xml" dir="${VroomModeling.location}" inheritAll="false" target="cleanall"/>
+    	<!-- No subproject-->
+    </target>
+
+    <target name="-build-dependencies">
+		<!-- No subproject-->
+    </target>
+
+</project>

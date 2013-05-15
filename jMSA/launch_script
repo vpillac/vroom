@@ -1,0 +1,34 @@
+#/bin/bash.sh
+
+#Launch size 40 subset with Consensus
+#./launch_novoa -f data/subset40.csv -i data/VRPSDConsensus.conf -c sub40Cons
+
+
+#Launch size 40 subset with Regret
+#./launch_novoa_nobuild -f data/subset40.csv -i data/VRPSDRegret.conf -c sub40Regret
+
+#Launch 30-40-60 with Consenus
+#./launch_novoa -e [30,40,60] [1] 100 -i data/VRPSDConsensus.conf -c ConsDetourOpt30-40-60 -t 6
+#./launch_novoa -f results/110111_17-11_pending-ConsDetourOpt30-40-60.csv -i data/VRPSDConsensus.conf -c ConsDetourOpt30-40-60 -t 6
+
+#Launch 30-40-60 with Detour Regret
+#./launch_novoa_nobuild -e [30,40,60] [1] 100 -i data/VRPSDRegret.conf -c RegretDetourOpt30-40-60 -t 6
+#./launch_novoa_nobuild -f results/110111_2-35_pending-RegretDetourOpt30-40-60.csv -i data/VRPSDRegret.conf -c RegretDetourOpt30-40-60 -t 6
+
+
+#Launch 30-40-60 with new Detour Regret
+#./launch_novoa_nobuild -f results/110105_15-32_pending-NewRegretDetourOpt30-40-60.csv -i data/VRPSDRegretNew.conf -c NewRegretDetourOpt30-40-60 -t 6
+
+#Launch 5-8-20 with Consensus
+#./launch_novoa -e [5,8,20] [1] 100 -i data/VRPSDConsensus.conf -c ConsDetourOpt5-8-20 -t 6
+
+#Launch 5-8-20 with Detour Regret
+#./launch_novoa_nobuild -e [5,8,20] [1] 100 -i data/VRPSDRegret.conf -c RegretDetourOpt5-8-20
+
+#Launch 100-150 with Consensus
+#./launch_novoa -e [100,150] [1] 100 -i data/VRPSDConsensus.conf -c Cons100-150 -t 6 -l 25
+#./launch_novoa -f results/110124_9-16_pending-Cons100-150.csv -i data/VRPSDConsensus.conf -c Cons100-150 -t 6 -l 25
+
+
+#Launch 30-40-60 with Consensus and Normal distributions
+./launch_novoa -e [30,40,60] [1] 100 -i data/VRPSDConsensus.conf -c ConsNormal30-40-60 -t 6 -d NORMAL  -l 15

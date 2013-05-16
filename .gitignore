@@ -6,3 +6,4 @@ dist/
 temp/
 **/*~*
 .fuse_*
+.DS_Store

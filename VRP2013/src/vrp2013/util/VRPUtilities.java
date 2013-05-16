@@ -16,6 +16,7 @@ import vroom.common.modeling.io.VRPRepPersistenceHelper;
 import vroom.common.utilities.BestKnownSolutions;
 import vroom.common.utilities.Utilities;
 import vroom.common.utilities.logging.Logging;
+import vroom.common.utilities.ssj.RandomSourceBase;
 
 /**
  * <code>VRPUtilities</code> contains utility methods used in the VRP 2013 examples.
@@ -26,10 +27,17 @@ import vroom.common.utilities.logging.Logging;
  *         href="http://www.victorpillac.com">www.victorpillac.com</a>
  * @version 1.0
  */
-public class VRPUtilities {
+public class VRPUtilities extends RandomSourceBase {
+
+    private final static VRPUtilities INSTANCE = new VRPUtilities();
+
+    public static VRPUtilities getInstance() {
+        return INSTANCE;
+    }
 
     static {
         setup("./instances/examples");
+        INSTANCE.setMRG32k3aRndStream(100, "vrputilities");
     }
 
     private static StaticInstance[]   INSTANCES;

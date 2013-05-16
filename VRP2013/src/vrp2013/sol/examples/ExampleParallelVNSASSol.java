@@ -8,6 +8,7 @@ import vroom.common.utilities.logging.LoggerHelper;
 import vrp2013.algorithms.CW;
 import vrp2013.examples.ExampleBase;
 import vrp2013.sol.algorithms.ParallelVNS;
+import vrp2013.sol.algorithms.ParallelVNSSA;
 import vrp2013.util.SolutionFactories;
 import vrp2013.util.VRPLogging;
 import vrp2013.util.VRPSolution;
@@ -21,18 +22,18 @@ import vrp2013.util.VRPUtilities;
  * @author vpillac, <a href="http://www.nicta.com.au">National ICT Australia</a>
  * @version 1.0
  */
-public class ExampleParallelVNSSol extends ExampleBase {
+public class ExampleParallelVNSASSol extends ExampleBase {
 
-    private final CW          mCW;
-    private final ParallelVNS mVNS;
+    private final CW            mCW;
+    private final ParallelVNSSA mVNS;
 
-    public ExampleParallelVNSSol(StaticInstance instance, BestKnownSolutions bks) {
+    public ExampleParallelVNSASSol(StaticInstance instance, BestKnownSolutions bks) {
         super(instance, bks);
 
         ConstraintHandler<VRPSolution> constraintHandler = new ConstraintHandler<>(
                 new CapacityConstraint<VRPSolution>());
         mCW = new CW(getInstance(), SolutionFactories.ARRAY_LIST_SOL_FACTORY, constraintHandler);
-        mVNS = new ParallelVNS(getInstance(), constraintHandler, null);
+        mVNS = new ParallelVNSSA(getInstance(), constraintHandler, null);
     }
 
     @Override
@@ -47,7 +48,7 @@ public class ExampleParallelVNSSol extends ExampleBase {
         mVNS.call();
         getStopwatch().stop();
 
-        logResult("ParallelVNS", mVNS.getBestSolution());
+        logResult("ParallelVNSSA", mVNS.getBestSolution());
         mVNS.dispose();
         return mVNS.getBestSolution();
     }
@@ -60,9 +61,9 @@ public class ExampleParallelVNSSol extends ExampleBase {
         LoggerHelper.setupRootLogger(LoggerHelper.LEVEL_WARN, LoggerHelper.LEVEL_LOW_DEBUG, true);
         VRPLogging.getBenchLogger().setLevel(LoggerHelper.LEVEL_INFO);
         // Sets the logging level for the VRP examples logger
-        VRPLogging.getOptLogger().setLevel(LoggerHelper.LEVEL_LOW_DEBUG);
+        VRPLogging.getOptLogger().setLevel(LoggerHelper.LEVEL_DEBUG);
 
-        ExampleParallelVNSSol example = new ExampleParallelVNSSol(VRPUtilities.pickInstance(),
+        ExampleParallelVNSASSol example = new ExampleParallelVNSASSol(VRPUtilities.pickInstance(),
                 VRPUtilities.getBKS());
         example.call();
 

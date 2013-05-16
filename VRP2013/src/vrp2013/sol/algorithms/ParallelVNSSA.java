@@ -8,12 +8,14 @@ import vroom.common.modeling.dataModel.INodeVisit;
 import vroom.common.modeling.dataModel.IVRPInstance;
 import vroom.common.modeling.dataModel.RouteBase;
 import vroom.common.modeling.util.IRoutePool;
+import vroom.common.utilities.Stopwatch;
+import vroom.common.utilities.optimization.IAcceptanceCriterion;
 import vroom.common.utilities.optimization.OptimizationSense;
-import vrp2013.algorithms.VNS;
-import vrp2013.util.BatchExecutor;
+import vroom.common.utilities.optimization.SAAcceptanceCriterion;
 import vrp2013.util.BatchExecutor.Result;
 import vrp2013.util.VRPLogging;
 import vrp2013.util.VRPSolution;
+import vrp2013.util.VRPUtilities;
 
 /**
  * The class <code>ParallelVND</code> is an implementation of VND that explores neighborhoods in parallel.
@@ -24,32 +26,37 @@ import vrp2013.util.VRPSolution;
  *         href="http://www.victorpillac.com">www.victorpillac.com</a>
  * @version 1.0
  */
-public class ParallelVNS extends VNS {
+public class ParallelVNSSA extends ParallelVNS {
 
-    private final BatchExecutor mExecutor;
+    private IAcceptanceCriterion mAccept;
 
-    public ParallelVNS(IVRPInstance instance, ConstraintHandler<VRPSolution> constraintHandler,
+    public ParallelVNSSA(IVRPInstance instance, ConstraintHandler<VRPSolution> constraintHandler,
             IRoutePool<INodeVisit> routePool) {
         super(instance, constraintHandler, routePool);
-
-        // Initialize the thread pool executor
-        mExecutor = new BatchExecutor(Math.min(Runtime.getRuntime().availableProcessors(),
-                getExplorers().size()), "pvns");
     }
 
     @Override
     public boolean localSearch(final VRPSolution solution) {
         VRPLogging.logOptResults("ls-init", false, getNeighStopwatch(), solution);
+        Stopwatch mainSW = new Stopwatch();
+        mainSW.start();
+        int it = 0;
+
+        mAccept = new SAAcceptanceCriterion(OptimizationSense.MINIMIZATION, VRPUtilities
+                .getInstance().getRandomStream(), solution.getCost(), 0.5, 0.5, 100, 0.001, false);
+
+        setBestSolution(solution);
 
         // Start with the current solution
         VRPSolution bestNeighbor = solution;
+        // The current solution is the best neighbor from the previous iteration
+        VRPSolution currentSolution = solution;
         // A flag set to true if the solution was changed in the last iteration
         boolean changedLastIt = true;
         // A flag set to true if the solution was changed at least once
         boolean changedOverall = false;
         while (changedLastIt) {
-            // The current solution is the best neighbor from the previous iteration
-            VRPSolution currentSolution = bestNeighbor;
+            it++;
             // The explorer that found the best solution (for logging purposes)
             NeighborhoodExplorer bestExplorer = null;
             changedLastIt = false;
@@ -64,20 +71,34 @@ public class ParallelVNS extends VNS {
             // Explore the neighborhoods in parallel threads
             results = getExecutor().submitBatchAndWait(getExplorers());
             // Find the best neighbor in the results
+            bestNeighbor = null;
             for (Entry<NeighborhoodExplorer, Result<VRPSolution>> entry : results.entrySet()) {
-                if (OptimizationSense.MINIMIZATION.isBetter(bestNeighbor, entry.getValue().get())) {
-                    changedLastIt = true;
-                    changedOverall = true;
+                if (bestNeighbor == null
+                        || OptimizationSense.MINIMIZATION.isBetter(bestNeighbor, entry.getValue()
+                                .get())) {
                     bestNeighbor = entry.getValue().get();
                     bestExplorer = entry.getKey();
                 }
             }
 
-            getNeighStopwatch().stop();
-            if (changedLastIt) {
+            if (mAccept.accept(currentSolution, bestNeighbor)) {
+                changedLastIt = true;
+                changedOverall = true;
+                currentSolution = bestNeighbor;
                 VRPLogging.logOptResults(bestExplorer.getShakeNeighborhood().getShortName() + "*",
                         changedLastIt, getNeighStopwatch(), bestNeighbor);
-                setBestSolution(bestNeighbor);
+
+                VRPLogging.getOptLogger().debug("[%9s] It: %5s Time:%s - obj=%.2f", "current", it,
+                        mainSW.readTimeString(3, true, false), currentSolution.getCost());
+            }
+
+            getNeighStopwatch().stop();
+            if (currentSolution != null
+                    && OptimizationSense.MINIMIZATION.isBetter(getBestSolution(), currentSolution)) {
+                setBestSolution(currentSolution);
+
+                VRPLogging.getOptLogger().debug("[%9s] It: %5s Time:%s - obj=%.2f", "new best", it,
+                        mainSW.readTimeString(3, true, false), getBestSolution().getCost());
             }
         }
 
@@ -89,15 +110,9 @@ public class ParallelVNS extends VNS {
                     solution.addRoute(r);
         }
 
+        mainSW.stop();
+
         return changedOverall;
     }
 
-    @Override
-    public void dispose() {
-        getExecutor().shutdown();
-    }
-
-    public BatchExecutor getExecutor() {
-        return mExecutor;
-    }
 }

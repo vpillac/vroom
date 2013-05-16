@@ -18,8 +18,7 @@ import vrp2013.util.VRPLogging;
 import vrp2013.util.VRPSolution;
 
 /**
- * The class <code>VND</code> is a simple implementation of a Variable Neighborhood Descent algorithm with a fixed set
- * of neighborhoods (Swap, 2-Opt, Or-Opt, String-Exchange).
+ * The class <code>VND</code> is a simple implementation of a Variable Neighborhood Descent algorithm.
  * <p>
  * Creation date: May 4, 2013 - 10:18:18 AM
  * 

@@ -16,6 +16,7 @@ import vroom.common.utilities.optimization.IConstraint;
 import vroom.common.utilities.params.ClassParameterKey;
 import vroom.common.utilities.params.GlobalParameters;
 import vroom.common.utilities.params.ParameterKey;
+import vroom.common.utilities.params.ParameterKey.DoubleParameterKey;
 import vroom.common.utilities.params.ParametersFilePersistenceDelegate;
 import vroom.common.utilities.params.RequiredParameter;
 
@@ -80,6 +81,15 @@ public class CWParameters extends GlobalParameters {
     public static final ParameterKey<Long>                   RANDOM_SEED            = new ParameterKey<Long>(
                                                                                             "RANDOM_SEED",
                                                                                             Long.class);
+
+    /** The minimum fraction of the savings list to shuffle */
+    public static final DoubleParameterKey                   RND_MIN_FRACTION       = new DoubleParameterKey(
+                                                                                            "RND_MIN_FRACTION",
+                                                                                            0.2d);
+    /** The maximum fraction of the savings list to shuffle */
+    public static final DoubleParameterKey                   RND_MAX_FRACTION       = new DoubleParameterKey(
+                                                                                            "RND_MAX_FRACTION",
+                                                                                            0.5d);
 
     static {
         setPersistenceDelegate(new CWPersistenceDelegate());

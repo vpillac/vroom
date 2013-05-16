@@ -19,7 +19,8 @@ import vrp2013.util.VRPSolution;
 import vrp2013.util.VRPUtilities;
 
 /**
- * <code>ExampleRoute</code>
+ * The class <code>ExampleRoutesAtomic</code> compare the performance of different routes implementations with atomic
+ * operations (append, getNodeAt, and removeFirst)
  * <p>
  * Creation date: 08/05/2013 - 2:25:43 PM
  * 

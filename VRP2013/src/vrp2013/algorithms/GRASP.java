@@ -106,7 +106,6 @@ public class GRASP implements IVRPOptimizationAlgorithm {
         mInitialization = new CW(getInstance(), getSolutionFactory(), mConstraintHandler);
 
         mRoutePool = routePool;
-        // mRoutePool = new ListRoutePool<>();
 
         mLocalSearch = new VND(getInstance(), mConstraintHandler, mRoutePool);
 

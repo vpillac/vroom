@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -106,6 +107,19 @@ public class VRPUtilities {
         if (INSTANCES[instance] == null)
             INSTANCES[instance] = loadInstance(INSTANCE_FILES[instance]);
         return INSTANCES[instance];
+    }
+
+    /**
+     * Returns a list of the available instances
+     * 
+     * @return a list of the available instances
+     * @author vpillac
+     */
+    public static List<StaticInstance> getInstances() {
+        ArrayList<StaticInstance> instances = new ArrayList<>(getInstanceCount());
+        for (int i = 0; i < getInstanceCount(); i++)
+            instances.add(pickInstance(i));
+        return instances;
     }
 
     public static BestKnownSolutions getBKS() {

@@ -20,11 +20,12 @@ import vroom.common.utilities.Utilities;
 import vroom.common.utilities.logging.LoggerHelper;
 import vrp2013.algorithms.GRASP;
 import vrp2013.algorithms.HeuristicConcentration;
-import vrp2013.algorithms.ParallelGRASP;
 import vrp2013.algorithms.IVRPOptimizationAlgorithm;
+import vrp2013.algorithms.ParallelGRASP;
 import vrp2013.util.SolutionFactories;
 import vrp2013.util.VRPLogging;
 import vrp2013.util.VRPSolution;
+import vrp2013.util.VRPUtilities;
 
 /**
  * The class <code>Benchmark</code> contains a main method to execute an algorithm over a set of instances and report
@@ -45,15 +46,9 @@ public class Benchmark {
         VRPLogging.getOptLogger().setLevel(LoggerHelper.LEVEL_WARN);
         VRPLogging.getBenchLogger().setLevel(LoggerHelper.LEVEL_INFO);
 
-        String instanceDir = "./instances/cvrp/augerat-et-al";
-        String bksFile = "./instances/cvrp/augerat.sol";
-
-        BestKnownSolutions bks = new BestKnownSolutions(bksFile);
-
-        List<File> instanceFiles = listInstanceFiles(instanceDir);
         List<BenchmarkRun> runs = new LinkedList<>();
-        for (File f : instanceFiles) {
-            runs.addAll(createRuns(f, bks));
+        for (IVRPInstance f : VRPUtilities.getInstances()) {
+            runs.addAll(createRuns(f, VRPUtilities.getBKS()));
         }
 
         executeRuns(runs);
@@ -81,18 +76,10 @@ public class Benchmark {
      * @param bks
      * @return
      */
-    public static List<BenchmarkRun> createRuns(File instanceFile, BestKnownSolutions bks) {
+    public static List<BenchmarkRun> createRuns(IVRPInstance instance, BestKnownSolutions bks) {
         LinkedList<BenchmarkRun> runs = new LinkedList<>();
         int initSeed = 0;
         int iterations = 50;
-
-        IVRPInstance instance = null;
-        try {
-            instance = PERSISTENCE_HELPER.readInstance(instanceFile);
-        } catch (Exception e) {
-            VRPLogging.getBenchLogger().exception("Benchmark.createRuns", e);
-            return new LinkedList<>();
-        }
 
         runs.add(new BenchmarkRun(new GRASP(instance, SolutionFactories.ARRAY_LIST_SOL_FACTORY,
                 initSeed, iterations, null), bks));
@@ -170,7 +157,7 @@ public class Benchmark {
                                                                             Double.class), };
 
         private final IVRPOptimizationAlgorithm mOpt;
-        private final HeuristicConcentration          mPostOpt;
+        private final HeuristicConcentration    mPostOpt;
         private final Stopwatch                 mOptSW      = new Stopwatch();
         private final Stopwatch                 mPostOptSW  = new Stopwatch();
         private final BestKnownSolutions        mBKS;

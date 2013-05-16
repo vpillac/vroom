@@ -11,7 +11,7 @@ import vrp2013.util.VRPLogging;
 import vrp2013.util.VRPSolution;
 
 /**
- * The class <code>ParallelVND</code> is an implementation of VND that explores neighborhoods in parallel.
+ * The class <code>ParallelVNS</code> is a parallel implementation of VNS that explores neighborhoods in simultaneously.
  * <p>
  * Creation date: 13/05/2013 - 9:36:40 AM
  * 

@@ -47,6 +47,8 @@ public class ExampleParallelVNS extends ExampleBase {
         getStopwatch().stop();
 
         logResult("VND", mVNS.getBestSolution());
+
+        mVNS.dispose();
         return mVNS.getBestSolution();
     }
 

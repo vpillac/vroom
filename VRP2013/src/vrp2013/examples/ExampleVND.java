@@ -12,6 +12,14 @@ import vrp2013.util.VRPLogging;
 import vrp2013.util.VRPSolution;
 import vrp2013.util.VRPUtilities;
 
+/**
+ * The class <code>ExampleVND</code> runs the {@link VND Variable Neighborhood Descent} algorithm on a single instance
+ * <p>
+ * Creation date: 16/05/2013 - 1:31:41 PM
+ * 
+ * @author vpillac, <a href="http://www.nicta.com.au">National ICT Australia</a>
+ * @version 1.0
+ */
 public class ExampleVND extends ExampleBase {
 
     private final CW  mCW;

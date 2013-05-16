@@ -18,7 +18,7 @@ import vrp2013.util.VRPSolution;
 import vrp2013.util.VRPUtilities;
 
 /**
- * The class <code>ExampleCompare</code> JAVADOC
+ * The class <code>ExampleCompare</code> runs all the examples for a single instance and logs the results.
  * <p>
  * Creation date: 13/05/2013 - 1:05:49 PM
  * 

@@ -33,7 +33,7 @@ public class ExampleCW extends ExampleBase {
 
     @Override
     public VRPSolution call() {
-        getStopwatch().start();
+        getStopwatch().restart();
         mCW.call();
         getStopwatch().stop();
         logResult("CW", mCW.getBestSolution());
@@ -54,7 +54,7 @@ public class ExampleCW extends ExampleBase {
         VRPLogging.getOptLogger().setLevel(LoggerHelper.LEVEL_DEBUG);
         VRPLogging.getBenchLogger().setLevel(LoggerHelper.LEVEL_INFO);
 
-        ExampleCW example = new ExampleCW(VRPUtilities.pickInstance(26), VRPUtilities.getBKS());
+        ExampleCW example = new ExampleCW(VRPUtilities.pickInstance(), VRPUtilities.getBKS());
         example.call();
 
         shutdown();

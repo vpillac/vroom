@@ -21,7 +21,7 @@ import vrp2013.util.VRPLogging;
 import vrp2013.util.VRPSolution;
 
 /**
- * The class <code>ParallelVND</code> is a sequential implementation of the Variable Neighborhood Search.
+ * The class <code>VNS</code> is a sequential implementation of the Variable Neighborhood Search.
  * <p>
  * Creation date: 13/05/2013 - 9:36:40 AM
  * 
@@ -78,10 +78,13 @@ public class VNS extends VND {
         boolean changedLastIt = true;
         // A flag set to true if the solution was changed at least once
         boolean changedOverall = false;
+
+        // While a the solution was changed in the last iteration
         while (changedLastIt) {
             changedLastIt = false;
             getNeighStopwatch().restart();
 
+            // Foreach neighborhood
             for (NeighborhoodExplorer explorer : mExplorers) {
                 // Set the starting solution for this explorer
                 explorer.setStartSolution(currentSolution);
@@ -114,7 +117,7 @@ public class VNS extends VND {
     }
 
     /**
-     * The class <code>NeighborhoodExploration</code> is an implementation of {@link Callable} that performs the
+     * The class <code>NeighborhoodExplorer</code> is an implementation of {@link Callable} that performs the
      * exploration of a neighborhood
      * <p>
      * Creation date: 13/05/2013 - 9:43:02 AM

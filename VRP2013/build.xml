@@ -4,7 +4,7 @@
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. -->
-<project basedir="." default="build" name="VRP2013">
+<project basedir="." default="dist" name="VRP2013">
 
 	<property name="libraries.dir" value="../Libraries" />
 
@@ -79,7 +79,7 @@
 	</target>
 	
 	<target  name="dist">
-		<zip destfile="dist/VRP2013.zip" >
+		<zip destfile="dist/VRP2013_Comp_Asp_VRP.zip" >
 			<zipfileset dir=".">    
 			    <include name="src/**"/>
 			    <exclude name="src/vrp2013/sol/**"/>

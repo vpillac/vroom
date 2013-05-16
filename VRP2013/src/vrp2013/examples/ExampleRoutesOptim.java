@@ -24,7 +24,8 @@ import vrp2013.util.VRPSolution;
 import vrp2013.util.VRPUtilities;
 
 /**
- * <code>ExampleRoute</code>
+ * The class <code>ExampleRoutesOptim</code> compare the performance of different routes implementations with two simple
+ * optimization procedures (CW and VND)
  * <p>
  * Creation date: 08/05/2013 - 2:25:43 PM
  * 

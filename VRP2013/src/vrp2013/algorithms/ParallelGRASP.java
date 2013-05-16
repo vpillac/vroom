@@ -18,7 +18,7 @@ import vrp2013.util.BatchExecutor.Result;
 import vrp2013.util.VRPSolution;
 
 /**
- * <code>pGRASP</code> is a parallel implementation of {@link GRASP}
+ * The class <code>ParallelGRASP</code> is a parallel implementation of {@link GRASP}
  * <p>
  * Creation date: May 4, 2013 - 2:56:28 PM
  * 

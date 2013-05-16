@@ -5,6 +5,7 @@ import java.util.Set;
 
 import umontreal.iro.lecuyer.rng.RandomPermutation;
 import vroom.common.heuristics.cw.CWLogging;
+import vroom.common.heuristics.cw.CWParameters;
 import vroom.common.heuristics.cw.IJCWArc;
 import vroom.common.heuristics.cw.kernel.ClarkeAndWrightHeuristic;
 import vroom.common.modeling.dataModel.IArc;
@@ -55,7 +56,10 @@ public class RandomizedSavingsHeuristic<S extends IVRPSolution<?>> extends Basic
         // position
 
         int shuffledArcsCount = getParentHeuristic().getRandomStream().nextInt(
-                (int) (savingsList.size() * 0.2), savingsList.size() - 1);
+                (int) ((savingsList.size() - 1) * getParentHeuristic().getParameters().get(
+                        CWParameters.RND_MIN_FRACTION)), //
+                (int) ((savingsList.size() - 1) * getParentHeuristic().getParameters().get(
+                        CWParameters.RND_MAX_FRACTION)));
 
         // IJCWArc temporarySaving = null;
         // int temporarySavingIndex = 0;
@@ -100,6 +104,8 @@ public class RandomizedSavingsHeuristic<S extends IVRPSolution<?>> extends Basic
         CWLogging.getAlgoLogger().debug(
                 "RandomizedSavingsHeuristic.randomizeSavings: Savings list size: %s",
                 savingsList.size());
+        CWLogging.getAlgoLogger().lowDebug(
+                "RandomizedSavingsHeuristic.randomizeSavings: Savings list : %s", savingsList);
     }
 
     @Override

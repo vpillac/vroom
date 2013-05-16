@@ -11,8 +11,8 @@ import vroom.common.modeling.util.ISolutionFactory;
 import vrp2013.util.VRPSolution;
 
 /**
- * The class <code>CW</code> is a convenience class that uses an instance of {@link ClarkeAndWrightHeuristic} to build
- * new routes
+ * The class <code>CW</code> is a convenience class that uses an instance of {@link ClarkeAndWrightHeuristic} to create
+ * initial solutions
  * <p>
  * Creation date: 09/05/2013 - 10:45:23 AM
  * 

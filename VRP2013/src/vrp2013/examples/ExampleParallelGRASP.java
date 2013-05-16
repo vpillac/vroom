@@ -70,6 +70,7 @@ public class ExampleParallelGRASP extends ExampleBase {
 
         getStopwatch().stop();
 
+        mPGRASP.dispose();
         return mHC.getBestSolution();
     }
 

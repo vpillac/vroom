@@ -814,7 +814,16 @@ public abstract class Utilities {
             }
 
             if (k >= values.length) {
-                T[] r = Arrays.copyOf(values, values.length);
+                int nonNull = 0;
+                for (T v : values)
+                    if (v != null)
+                        nonNull++;
+
+                T[] r = Arrays.copyOf(values, nonNull);
+                int i = 0;
+                for (T v : values)
+                    if (v != null)
+                        r[i++] = v;
                 Arrays.sort(r);
                 return r;
             }

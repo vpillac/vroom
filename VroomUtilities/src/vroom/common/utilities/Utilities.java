@@ -813,6 +813,12 @@ public abstract class Utilities {
                 return r[0] != null ? r : Arrays.copyOf(values, 0);
             }
 
+            if (k >= values.length) {
+                T[] r = Arrays.copyOf(values, values.length);
+                Arrays.sort(r);
+                return r;
+            }
+
             return QuickSelect.max(values, k, true, true);
         }
 
@@ -834,6 +840,12 @@ public abstract class Utilities {
                 double[] r = Arrays.copyOf(values, 1);
                 r[0] = maxDouble(values);
                 return r[0] != Double.NEGATIVE_INFINITY ? r : new double[0];
+            }
+
+            if (k >= values.length) {
+                double[] r = Arrays.copyOf(values, values.length);
+                Arrays.sort(r);
+                return r;
             }
 
             Double[] clone = new Double[values.length];

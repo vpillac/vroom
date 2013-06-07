@@ -47,6 +47,9 @@
         <archive javadoc="jar:platform:/resource/Libraries/log4j-1.2.15/log4j-1.2.15-doc.jar!/api" path="/Libraries/log4j-1.2.15/log4j-1.2.15.jar"/>
     </library>
     <library name="SSJ" systemlibrary="false">
-        <archive javadoc="jar:platform:/resource/Libraries/ssj-20091109/ssj-doc.zip!/api" path="/Libraries/ssj-20091109/ssj.jar"/>
+        <archive javadoc="jar:platform:/resource/Libraries/ssj-20120216/ssj-doc.zip!/" path="/Libraries/ssj-20120216/ssj.jar"/>
+    </library>
+    <library name="ssj-20120216" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Libraries/ssj-20120216/ssj-doc.zip!/" path="/Libraries/ssj-20120216/ssj.jar"/>
     </library>
 </eclipse-userlibraries>

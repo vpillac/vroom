@@ -93,6 +93,20 @@
 		</zip>
 	</target>
 	
+	<target  name="dist-sol">
+		<zip destfile="dist/VRP2013_Comp_Asp_VRP-sol.zip" >
+			<zipfileset dir=".">    
+			    <include name="src/**"/>
+			    <include name="instances/**"/>
+			    <include name="lib/**"/>
+			    <include name=".project"/>
+			    <include name=".settings"/>
+			    <include name=".classpath"/>
+				<include name=".settings/**"/>
+			</zipfileset>
+		</zip>
+	</target>
+	
 	<target  name="build-dist" depends="build-subprojects,build-project,dist">
 	</target>
 	

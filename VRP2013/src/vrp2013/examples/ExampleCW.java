@@ -45,10 +45,10 @@ public class ExampleCW extends ExampleBase {
         // The first argument is the default logger level
         // The second is the filtering level of the appender (i.e. console output)
         // The last can be set to true to do the logging in a separate thread, or false to do it in the main thread
-        LoggerHelper.setupRootLogger(LoggerHelper.LEVEL_WARN, LoggerHelper.LEVEL_LOW_DEBUG, false);
+        LoggerHelper.setupRootLogger(LoggerHelper.LEVEL_WARN, LoggerHelper.LEVEL_LOW_DEBUG, true);
 
         // Sets the logging level for the CW loggers
-        CWLogging.getBaseLogger().setLevel(LoggerHelper.LEVEL_LOW_DEBUG);
+        CWLogging.getBaseLogger().setLevel(LoggerHelper.LEVEL_WARN);
 
         // Sets the logging level for the VRP examples logger
         VRPLogging.getOptLogger().setLevel(LoggerHelper.LEVEL_DEBUG);

@@ -1,1 +1,0 @@
-xjc -p vroom.common.modeling.vrprep VRPRep.xsd -d ../src/

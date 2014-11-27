@@ -37,7 +37,6 @@ public class ConstraintHandler<S> implements IConstraint<S>, Iterable<IConstrain
      * @param constraints
      *            the constraints to be added to the new handler
      */
-    @SafeVarargs
     public ConstraintHandler(IConstraint<S>... constraints) {
         mConstraints = new ArrayList<IConstraint<S>>(constraints.length);
         for (IConstraint<S> c : constraints)

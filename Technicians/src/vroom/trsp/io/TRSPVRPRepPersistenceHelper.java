@@ -271,11 +271,10 @@ public class TRSPVRPRepPersistenceHelper implements ITRSPPersistenceHelper {
     public static void main(String[] args) {
         TRSPLogging.setupRootLogger(LoggerHelper.LEVEL_DEBUG, LoggerHelper.LEVEL_DEBUG, false);
 
-         String src = "../Instances/trsp/pillac/crew25";
-         String pattern = ".+100_25.+txt";
-         String dest = "../Instances/vrprep/trsp/pillac/%s.xml";
-         String ref =
-         "Pillac, V.; Gueret, C. & Medaglia, A. L. A parallel matheuristic for the Technician Routing and Scheduling Problem Optimization Letters, 2012, in press, doi:10.1007/s11590-012-0567-4";
+        String src = "../Instances/trsp/pillac/crew25";
+        String pattern = ".+100_25.+txt";
+        String dest = "../Instances/vrprep/trsp/pillac/%s.xml";
+        String ref = "Pillac, V.; Gueret, C. & Medaglia, A. L. A parallel matheuristic for the Technician Routing and Scheduling Problem Optimization Letters, 2012, in press, doi:10.1007/s11590-012-0567-4";
 
         // String src = "../Instances/trsp/pillac2/";
         // String pattern = ".+txt";
@@ -283,13 +282,13 @@ public class TRSPVRPRepPersistenceHelper implements ITRSPPersistenceHelper {
         // String ref =
         // "Pillac, V., Object oriented modules for dynamic vehicle routing, Ph.D. thesis, Ecole des Mines de Nantes, Universidad de Los Andes, 2012";
 
-//        String src = "../Instances/vrprep/trsp/pillac2/";
-//        String pattern = ".+zip";
+        // String src = "../Instances/vrprep/trsp/pillac2/";
+        // String pattern = ".+zip";
 
         PillacSimplePersistenceHelper reader = new PillacSimplePersistenceHelper();
-         TRSPVRPRepPersistenceHelper writer = new TRSPVRPRepPersistenceHelper();
-         writer.getDefaultInfo().setReference(ref);
-         writer.setCompress(false);
+        TRSPVRPRepPersistenceHelper writer = new TRSPVRPRepPersistenceHelper();
+        writer.getDefaultInfo().setReference(ref);
+        writer.setCompress(false);
 
         try {
             List<File> files = Utilities.listFiles(src, pattern);
@@ -298,16 +297,16 @@ public class TRSPVRPRepPersistenceHelper implements ITRSPPersistenceHelper {
             timer.start();
             for (File f : files) {
                 Stopwatch t = new Stopwatch();
-                 System.out.println("Converting " + f.getName());
-                 TRSPInstance trspInstance = reader.readInstance(f);
+                System.out.println("Converting " + f.getName());
+                TRSPInstance trspInstance = reader.readInstance(f);
 
-                 writer.writeInstance(trspInstance,
-                 new File(String.format(dest, trspInstance.getName())));
-//                t.reset();
-//                t.start();
-//                Instance i = VRPRepJAXBUtilities.readInstance(f);
-//                t.stop();
-//                System.out.println(t.readTimeMS());
+                writer.writeInstance(trspInstance,
+                        new File(String.format(dest, trspInstance.getName())));
+                // t.reset();
+                // t.start();
+                // Instance i = VRPRepJAXBUtilities.readInstance(f);
+                // t.stop();
+                // System.out.println(t.readTimeMS());
             }
             timer.stop();
 

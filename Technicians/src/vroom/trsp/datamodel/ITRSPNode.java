@@ -37,6 +37,19 @@ public interface ITRSPNode extends IActualRequest, IObjectWithID, IToShortString
             }
         }
 
+        public int toInt() {
+            switch (this) {
+            case REQUEST:
+                return 2;
+            case HOME:
+                return 1;
+            case MAIN_DEPOT:
+                return 0;
+            default:
+                throw new UnsupportedOperationException();
+            }
+        }
+
         private final boolean mDepot;
 
         private NodeType(boolean depot) {

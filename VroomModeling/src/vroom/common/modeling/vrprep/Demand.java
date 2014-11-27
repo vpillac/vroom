@@ -5,12 +5,12 @@
 // Generated on: 2013.04.23 at 03:15:41 PM EST 
 //
 
-
 package vroom.common.modeling.vrprep;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -20,11 +20,11 @@ import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * Java class for anonymous complex type.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -41,52 +41,37 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "content"
-})
+@XmlType(name = "", propOrder = { "content" })
 @XmlRootElement(name = "demand")
 public class Demand {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "custom", type = Custom.class, required = false),
-        @XmlElementRef(name = "PoissonVariable", type = PoissonVariable.class, required = false),
-        @XmlElementRef(name = "NormalVariable", type = NormalVariable.class, required = false)
-    })
+    @XmlElementRefs({ @XmlElementRef(name = "custom", type = Custom.class),
+            @XmlElementRef(name = "PoissonVariable", type = PoissonVariable.class),
+            @XmlElementRef(name = "NormalVariable", type = NormalVariable.class) })
     @XmlMixed
     protected List<Object> content;
     @XmlAttribute(name = "isSplitable")
-    protected Boolean isSplitable;
+    protected Boolean      isSplitable;
     @XmlAttribute(name = "type")
-    protected BigInteger type;
+    protected BigInteger   type;
 
     /**
      * Gets the value of the content property.
-     * 
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the content property.
-     * 
+     * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to
+     * the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE> method for
+     * the content property.
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getContent().add(newItem);
+     * getContent().add(newItem);
      * </pre>
-     * 
-     * 
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * {@link Custom }
-     * {@link NormalVariable }
+     * Objects of the following type(s) are allowed in the list {@link String } {@link Custom } {@link NormalVariable }
      * {@link PoissonVariable }
-     * 
-     * 
      */
     public List<Object> getContent() {
         if (content == null) {
@@ -98,10 +83,7 @@ public class Demand {
     /**
      * Gets the value of the isSplitable property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return possible object is {@link Boolean }
      */
     public boolean isIsSplitable() {
         if (isSplitable == null) {
@@ -115,9 +97,7 @@ public class Demand {
      * Sets the value of the isSplitable property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *            allowed object is {@link Boolean }
      */
     public void setIsSplitable(Boolean value) {
         this.isSplitable = value;
@@ -126,10 +106,7 @@ public class Demand {
     /**
      * Gets the value of the type property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     * @return possible object is {@link BigInteger }
      */
     public BigInteger getType() {
         return type;
@@ -139,9 +116,7 @@ public class Demand {
      * Sets the value of the type property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *            allowed object is {@link BigInteger }
      */
     public void setType(BigInteger value) {
         this.type = value;

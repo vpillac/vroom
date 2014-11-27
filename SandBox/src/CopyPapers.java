@@ -15,7 +15,7 @@ public class CopyPapers {
     public static void main(String[] args) {
         String[][] paths = new String[][] {
                 { "D-VRP/Pillac_DVRP_tech.tex", "Pillac_DVROOM_deter.tex" },//
-                { "D-TRSP/Pillac_DTRSP_tech.tex", "Pillac_DVROOM_TRSP_dynamic.tex" } };
+                { "D-/Pillac_D_tech.tex", "Pillac_DVROOM__dynamic.tex" } };
 
         for (String[] path : paths) {
             try {

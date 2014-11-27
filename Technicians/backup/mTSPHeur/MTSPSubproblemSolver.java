@@ -1,20 +1,20 @@
 /**
  * 
  */
-package vroom.trsp.optimization.mTSPHeur;
+package vroom..optimization.mTSPHeur;
 
 import vroom.common.utilities.optimization.IParameters.LSStrategy;
 import vroom.common.utilities.optimization.SimpleParameters;
 import vroom.common.utilities.ssj.RandomSourceBase;
-import vroom.trsp.datamodel.TRSPInstance;
-import vroom.trsp.datamodel.TRSPTour;
-import vroom.trsp.datamodel.TRSPTourChecker;
-import vroom.trsp.datamodel.costDelegates.TRSPWorkingTimeDelegate;
-import vroom.trsp.optimization.localSearch.TRSPShift;
+import vroom..datamodel.Instance;
+import vroom..datamodel.Tour;
+import vroom..datamodel.TourChecker;
+import vroom..datamodel.costDelegates.WorkingTimeDelegate;
+import vroom..optimization.localSearch.Shift;
 
 /**
  * <code>MTSPSubproblemSolver</code> is the class responsible for the optimization of the TSP subproblems resulting from
- * the decomposition of the initial TRSP.
+ * the decomposition of the initial .
  * <p>
  * Creation date: Feb 17, 2011 - 11:02:43 AM
  * 
@@ -38,19 +38,19 @@ public class MTSPSubproblemSolver extends RandomSourceBase implements Runnable {
     }
 
     /** the original (complete) instance **/
-    private final TRSPInstance mOriginalInstance;
+    private final Instance mOriginalInstance;
 
     /**
      * Getter the original (complete) instance
      * 
      * @return the original instance
      */
-    public TRSPInstance getOriginalInstance() {
+    public Instance getOriginalInstance() {
         return this.mOriginalInstance;
     }
 
     /** the considered subproblem **/
-    private TRSPInstance mSubproblem;
+    private Instance mSubproblem;
 
     /**
      * Sets the subproblem that will be solved by this solver
@@ -58,7 +58,7 @@ public class MTSPSubproblemSolver extends RandomSourceBase implements Runnable {
      * @param subproblem
      *            the subproblem to be solved
      */
-    public void setSubproblem(TRSPInstance subproblem) {
+    public void setSubproblem(Instance subproblem) {
         if (isRunning())
             throw new IllegalStateException("Cannot set the solver while solver is running");
 
@@ -70,29 +70,29 @@ public class MTSPSubproblemSolver extends RandomSourceBase implements Runnable {
      * 
      * @return the subproblem
      */
-    public TRSPInstance getSubproblem() {
+    public Instance getSubproblem() {
         return this.mSubproblem;
     }
 
     private final MTSPRandomInitialization mInitialization;
 
-    public MTSPSubproblemSolver(TRSPInstance originalInstance) {
+    public MTSPSubproblemSolver(Instance originalInstance) {
         super();
 
         mOriginalInstance = originalInstance;
 
-        mInitialization = new MTSPRandomInitialization(originalInstance, new TRSPWorkingTimeDelegate());
+        mInitialization = new MTSPRandomInitialization(originalInstance, new WorkingTimeDelegate());
     }
 
     /** the solution found by this solver **/
-    private TRSPTour mSolution;
+    private Tour mSolution;
 
     /**
      * Getter for the solution found by this solver
      * 
      * @return the current solution
      */
-    public TRSPTour getSolution() {
+    public Tour getSolution() {
         return this.mSolution;
     }
 
@@ -109,12 +109,12 @@ public class MTSPSubproblemSolver extends RandomSourceBase implements Runnable {
 
         mSolution = mInitialization.newSolution(mSolution, getSubproblem(), getRandomStream());
         mSolution.setAutoUpdated(true);
-        String check = TRSPTourChecker.checkTour(mSolution, true);
+        String check = TourChecker.checkTour(mSolution, true);
         System.out.printf(" > Init sol      (maxLateness: %s)\n", mSolution.getMaxLateness());
         System.out.printf(" > Incoherencies: %s\n", check);
         System.out.println(mSolution);
-        // TRSPShift.CHECK_SOLUTIONS_AFTER_MOVE = true;
-        TRSPShift shift = new TRSPShift();
+        // Shift.CHECK_SOLUTIONS_AFTER_MOVE = true;
+        Shift shift = new Shift();
         shift.localSearch(mSolution, new SimpleParameters(LSStrategy.DET_FIRST_IMPROVEMENT, Integer.MAX_VALUE,
                 Integer.MAX_VALUE));
         System.out.printf(" > 1-shift sol   (maxLateness: %s)\n", mSolution.getMaxLateness());

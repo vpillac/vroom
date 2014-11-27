@@ -1,7 +1,7 @@
 /**
  * 
  */
-package vroom.trsp.optimization.mTSPHeur;
+package vroom..optimization.mTSPHeur;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,18 +11,18 @@ import java.util.List;
 import vroom.common.heuristics.HeuristicStatus;
 import vroom.common.modelling.dataModel.Depot;
 import vroom.common.modelling.dataModel.IVRPRequest;
-import vroom.trsp.datamodel.TRSPInstance;
-import vroom.trsp.datamodel.TRSPRequest;
-import vroom.trsp.datamodel.Technician;
-import vroom.trsp.optimization.TRSPConstructiveHeuristic;
-import vroom.trsp.visualization.TRSPVisualization;
+import vroom..datamodel.Instance;
+import vroom..datamodel.Request;
+import vroom..datamodel.Technician;
+import vroom..optimization.ConstructiveHeuristic;
+import vroom..visualization.Visualization;
 
 /**
- * <code>TRSPmTSPHeuristic</code> is the root class for a multiple TSP based constructive heuristic for the TRSP.
+ * <code>mTSPHeuristic</code> is the root class for a multiple TSP based constructive heuristic for the .
  * <p>
  * The original paper is first decomposed into a set of TSP (one per technician) by relaxing tooling constraints, doing
  * a Lagrangian relaxation of TW constraints. Each problem is solved trying to minimize the total time
- * (travel+service+penalizations). Afterwards individual solutions are merged to obtain a solution to the TRSP
+ * (travel+service+penalizations). Afterwards individual solutions are merged to obtain a solution to the 
  * </p>
  * <p>
  * Creation date: Feb 17, 2011 - 10:33:47 AM
@@ -32,12 +32,12 @@ import vroom.trsp.visualization.TRSPVisualization;
  *         href="http://www.irccyn.ec-nantes.fr/irccyn/d/en/equipes/Slp">SLP</a>
  * @version 1.0
  */
-public class TRSPmTSPHeuristic extends TRSPConstructiveHeuristic implements Runnable {
+public class mTSPHeuristic extends ConstructiveHeuristic implements Runnable {
 
     /** A list of the TSP subproblems */
-    private List<TRSPInstance> mSubproblems;
+    private List<Instance> mSubproblems;
 
-    public TRSPmTSPHeuristic() {
+    public mTSPHeuristic() {
         super();
     }
 
@@ -46,7 +46,7 @@ public class TRSPmTSPHeuristic extends TRSPConstructiveHeuristic implements Runn
      */
     protected void decompose() {
         int numTech = getInstance().getFleet().size();
-        mSubproblems = new ArrayList<TRSPInstance>(numTech);
+        mSubproblems = new ArrayList<Instance>(numTech);
 
         // Create the subproblems
         for (int t = 0; t < numTech; t++) {
@@ -54,9 +54,9 @@ public class TRSPmTSPHeuristic extends TRSPConstructiveHeuristic implements Runn
             Technician tech = getInstance().getFleet().getVehicle(t);
 
             // List of compatible requests
-            LinkedList<TRSPRequest> compatibleRequests = new LinkedList<TRSPRequest>();
+            LinkedList<Request> compatibleRequests = new LinkedList<Request>();
             for (IVRPRequest r : getInstance().getRequests()) {
-                TRSPRequest req = (TRSPRequest) r;
+                Request req = (Request) r;
                 if (tech.getSkillSet().isCompatibleWith(req.getSkillSet()))
                     compatibleRequests.add(req);
             }
@@ -66,7 +66,7 @@ public class TRSPmTSPHeuristic extends TRSPConstructiveHeuristic implements Runn
             ArrayList<Depot> depots = new ArrayList<Depot>(2);
             depots.add(getInstance().getDepot(0));
             depots.add(tech.getHome());
-            TRSPInstance subproblem = new TRSPInstance(name, Collections.singleton(tech),
+            Instance subproblem = new Instance(name, Collections.singleton(tech),
                     getInstance().getSkillCount(), getInstance().getToolCount(), getInstance().getSpareCount(), depots,
                     compatibleRequests);
 
@@ -81,7 +81,7 @@ public class TRSPmTSPHeuristic extends TRSPConstructiveHeuristic implements Runn
         MTSPSubproblemSolver solver = new MTSPSubproblemSolver(getInstance());
         solver.setRandomStream(getRandomStream());
 
-        for (TRSPInstance sub : mSubproblems) {
+        for (Instance sub : mSubproblems) {
             System.out.println("-------------------------------------");
             System.out.println("Solving subproblem " + sub);
 
@@ -90,12 +90,12 @@ public class TRSPmTSPHeuristic extends TRSPConstructiveHeuristic implements Runn
             solver.run();
             System.out.println(" > Final Solution");
             System.out.println(solver.getSolution());
-            TRSPVisualization.showVisualizationFrame(solver.getSolution());
+            Visualization.showVisualizationFrame(solver.getSolution());
         }
     }
 
     /**
-     * Recombine the subproblems in a solution of the original TRSP
+     * Recombine the subproblems in a solution of the original 
      */
     protected void recombine() {
 

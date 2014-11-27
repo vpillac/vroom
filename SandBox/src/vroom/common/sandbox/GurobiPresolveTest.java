@@ -30,9 +30,9 @@ public class GurobiPresolveTest {
     }
 
     public static void main(String[] args) {
-        testRealTRSP(0);
-        testRealTRSP(1);
-        testRealTRSP(2);
+        testReal(0);
+        testReal(1);
+        testReal(2);
     }
 
     private static void testPresolve(boolean setStart) throws GRBException {
@@ -77,19 +77,19 @@ public class GurobiPresolveTest {
         model.optimize();
     }
 
-    private static void testRealTRSP(int presolve) {
+    private static void testReal(int presolve) {
         System.out.println("TEST WITH PRESOLVE = " + presolve);
         System.out.println("==================================================");
 
         try {
             sEnv.set(IntParam.Presolve, presolve);
 
-            GRBModel model = new GRBModel(sEnv, "gurobi/trsp_model.lp");
+            GRBModel model = new GRBModel(sEnv, "gurobi/_model.lp");
             model.set(StringAttr.ModelName, "test_pres" + presolve);
 
             GRBVar[] vars = model.getVars();
 
-            model.read("gurobi/trsp_model_start.mst");
+            model.read("gurobi/_model_start.mst");
             checkStartSolution(model, 100);
 
             model.optimize();

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package vroom.trsp.bench;
+package vroom..bench;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,12 +10,12 @@ import vroom.common.heuristics.vls.VLSLogging;
 import vroom.common.heuristics.vns.VariableNeighborhoodSearch;
 import vroom.common.utilities.logging.LoggerHelper;
 import vroom.common.utilities.logging.Logging;
-import vroom.trsp.datamodel.TRSPInstance;
-import vroom.trsp.io.PillacSimplePersistenceHelper;
-import vroom.trsp.optimization.mTSPHeur.TRSPmTSPHeuristic;
+import vroom..datamodel.Instance;
+import vroom..io.PillacSimplePersistenceHelper;
+import vroom..optimization.mTSPHeur.mTSPHeuristic;
 
 /**
- * <code>MTSPHeuristicTest</code> is a class used to test the {@link TRSPmTSPHeuristic}
+ * <code>MTSPHeuristicTest</code> is a class used to test the {@link mTSPHeuristic}
  * <p>
  * Creation date: Feb 17, 2011 - 4:36:54 PM
  * 
@@ -26,7 +26,7 @@ import vroom.trsp.optimization.mTSPHeur.TRSPmTSPHeuristic;
  */
 public class MTSPHeuristicTest {
 
-    public static String INSTANCE = "../Instances/trsp/pillac/C202-S5_3_1-T10_8_3.txt";
+    public static String INSTANCE = "../Instances//pillac/C202-S5_3_1-T10_8_3.txt";
 
     public static void main(String[] args) {
 
@@ -36,9 +36,9 @@ public class MTSPHeuristicTest {
 
         PillacSimplePersistenceHelper reader = new PillacSimplePersistenceHelper();
         try {
-            TRSPInstance instance = reader.readInstance(new File(INSTANCE));
+            Instance instance = reader.readInstance(new File(INSTANCE));
 
-            TRSPmTSPHeuristic heuristic = new TRSPmTSPHeuristic();
+            mTSPHeuristic heuristic = new mTSPHeuristic();
             heuristic.setMRG32k3aRndStream(new long[] { 1, 2, 3, 4, 5, 6 }, "default");
             heuristic.setInstance(instance);
             heuristic.run();

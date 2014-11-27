@@ -1,7 +1,7 @@
 /**
  * 
  */
-package vroom.trsp.optimization.biobj;
+package vroom..optimization.biobj;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,12 +21,12 @@ import vroom.common.utilities.ILockable;
 import vroom.common.utilities.Utilities;
 import vroom.common.utilities.Utilities.Random;
 import vroom.common.utilities.optimization.OptimizationSense;
-import vroom.trsp.datamodel.TRSPSolution;
-import vroom.trsp.datamodel.costDelegates.TRSPCostDelegate;
+import vroom..datamodel.Solution;
+import vroom..datamodel.costDelegates.CostDelegate;
 
 /**
  * <code>ParetoFront</code> is an implementation of {@link IPALNSSolutionPool} that maintain a Pareto front for
- * {@link TRSPSolution solutions} according to 2 objectives.
+ * {@link Solution solutions} according to 2 objectives.
  * <p>
  * Creation date: Nov 23, 2011 - 1:55:52 PM
  * 
@@ -35,7 +35,7 @@ import vroom.trsp.datamodel.costDelegates.TRSPCostDelegate;
  *         href="http://www.irccyn.ec-nantes.fr/irccyn/d/en/equipes/Slp">SLP</a>
  * @version 1.0
  */
-public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.common.utilities.Cloneable<ParetoFrontOld>,
+public class ParetoFrontOld implements IPALNSSolutionPool<Solution>, vroom.common.utilities.Cloneable<ParetoFrontOld>,
         Cloneable, ILockable {
 
     private final HashSet<ParetoSolution> mAllSolutions;
@@ -45,8 +45,8 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
     private final OptimizationSense       mFirstObjSense;
     private final OptimizationSense       mSecondObjSense;
 
-    private final TRSPCostDelegate        mFirstCostDelegate;
-    private final TRSPCostDelegate        mSecondCostDelegate;
+    private final CostDelegate        mFirstCostDelegate;
+    private final CostDelegate        mSecondCostDelegate;
 
     /**
      * Getter for <code>allSolutions</code>
@@ -98,7 +98,7 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
      * 
      * @return the firstCostDelegate
      */
-    TRSPCostDelegate getFirstCostDelegate() {
+    CostDelegate getFirstCostDelegate() {
         return mFirstCostDelegate;
     }
 
@@ -107,7 +107,7 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
      * 
      * @return the secondCostDelegate
      */
-    TRSPCostDelegate getSecondCostDelegate() {
+    CostDelegate getSecondCostDelegate() {
         return mSecondCostDelegate;
     }
 
@@ -123,8 +123,8 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
      * @param secondObjSense
      *            the sense of optimization for the second objective function
      */
-    public ParetoFrontOld(TRSPCostDelegate firstCostDelegate, OptimizationSense firstObjSense,
-            TRSPCostDelegate secondCostDelegate, OptimizationSense secondObjSense) {
+    public ParetoFrontOld(CostDelegate firstCostDelegate, OptimizationSense firstObjSense,
+            CostDelegate secondCostDelegate, OptimizationSense secondObjSense) {
         mFirstCostDelegate = firstCostDelegate;
         mFirstObjSense = firstObjSense;
         mSecondCostDelegate = secondCostDelegate;
@@ -157,21 +157,21 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
     }
 
     /**
-     * Wraps a {@link TRSPSolution solution} in a {@link ParetoSolution pareto solution} and store its cost depending on
+     * Wraps a {@link Solution solution} in a {@link ParetoSolution pareto solution} and store its cost depending on
      * both objectives
      * 
      * @param sol
      *            the solution wrap
      * @return the wrapped solution
      */
-    public ParetoSolution wrapSolution(TRSPSolution sol) {
+    public ParetoSolution wrapSolution(Solution sol) {
         return new ParetoSolution(sol, mFirstCostDelegate.evaluateSolution(sol, true, false),
                 mSecondCostDelegate.evaluateSolution(sol, true, false));
     }
 
     /**
      * Creates a point in the objective function space wrapped in a {@link ParetoSolution} with no associated
-     * {@link TRSPSolution}
+     * {@link Solution}
      * 
      * @param firstObj
      *            the first objective value
@@ -184,7 +184,7 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
     }
 
     @Override
-    public boolean add(TRSPSolution solution) {
+    public boolean add(Solution solution) {
         ParetoSolution sol = wrapSolution(solution);
 
         if (mAllSolutions.contains(sol))
@@ -228,17 +228,17 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
     }
 
     @Override
-    public void addAll(Collection<TRSPSolution> solutions) {
-        for (TRSPSolution sol : solutions) {
+    public void addAll(Collection<Solution> solutions) {
+        for (Solution sol : solutions) {
             add(sol);
         }
 
     }
 
     @Override
-    public Collection<TRSPSolution> subset(int size, RandomStream rndStream) {
+    public Collection<Solution> subset(int size, RandomStream rndStream) {
         ArrayList<ParetoSolution> wrappedSubset = Random.sample(mFirstObjSol, size, rndStream);
-        ArrayList<TRSPSolution> subset = new ArrayList<TRSPSolution>(wrappedSubset.size());
+        ArrayList<Solution> subset = new ArrayList<Solution>(wrappedSubset.size());
         for (ParetoSolution sol : wrappedSubset) {
             subset.add(sol.getSolution());
         }
@@ -246,7 +246,7 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
     }
 
     @Override
-    public TRSPSolution getBest() {
+    public Solution getBest() {
         return mFirstObjSol.last().getSolution();
     }
 
@@ -328,13 +328,13 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
     }
 
     @Override
-    public Iterator<TRSPSolution> iterator() {
+    public Iterator<Solution> iterator() {
         return getSolutions().iterator();
     }
 
     @Override
-    public List<TRSPSolution> getSolutions() {
-        ArrayList<TRSPSolution> sol = new ArrayList<TRSPSolution>(size());
+    public List<Solution> getSolutions() {
+        ArrayList<Solution> sol = new ArrayList<Solution>(size());
         for (ParetoSolution s : mFirstObjSol)
             sol.add(s.getSolution());
         return sol;
@@ -354,7 +354,7 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
     public class ParetoSolution {
         private final double       mFirstObjValue;
         private final double       mSecondObjValue;
-        private final TRSPSolution mSolution;
+        private final Solution mSolution;
 
         /**
          * Creates a new <code>ParetoSolution</code>
@@ -363,7 +363,7 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
          * @param firstObjValue
          * @param secondObjValue
          */
-        public ParetoSolution(TRSPSolution solution, double firstObjValue, double secondObjValue) {
+        public ParetoSolution(Solution solution, double firstObjValue, double secondObjValue) {
             mSolution = solution;
             mFirstObjValue = firstObjValue;
             mSecondObjValue = secondObjValue;
@@ -404,7 +404,7 @@ public class ParetoFrontOld implements IPALNSSolutionPool<TRSPSolution>, vroom.c
          * 
          * @return the solution
          */
-        public TRSPSolution getSolution() {
+        public Solution getSolution() {
             return mSolution;
         }
 

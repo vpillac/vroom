@@ -1,7 +1,7 @@
 /**
  *
  */
-package vroom.trsp.optimization.alns;
+package vroom..optimization.alns;
 
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
@@ -18,13 +18,13 @@ import vroom.common.heuristics.alns.IRepair;
 import vroom.common.utilities.BatchThreadPoolExecutor;
 import vroom.common.utilities.optimization.IInstance;
 import vroom.common.utilities.optimization.IParameters;
-import vroom.trsp.datamodel.TRSPSolution;
-import vroom.trsp.datamodel.costDelegates.TRSPCostDelegate;
-import vroom.trsp.datamodel.costDelegates.TRSPTourBalanceDelegate;
-import vroom.trsp.optimization.InsertionMove;
-import vroom.trsp.optimization.constraints.TRSPConstraintHandler;
-import vroom.trsp.util.TRSPGlobalParameters;
-import vroom.trsp.util.TRSPLogging;
+import vroom..datamodel.Solution;
+import vroom..datamodel.costDelegates.CostDelegate;
+import vroom..datamodel.costDelegates.TourBalanceDelegate;
+import vroom..optimization.InsertionMove;
+import vroom..optimization.constraints.ConstraintHandler;
+import vroom..util.GlobalParameters;
+import vroom..util.Logging;
 
 /**
  * <code>RepairBestInsertion</code> is an implementation of the <em>best insertion</em> presented in:
@@ -41,12 +41,12 @@ import vroom.trsp.util.TRSPLogging;
  *         href="http://www.irccyn.ec-nantes.fr/irccyn/d/en/equipes/Slp">SLP</a>
  * @version 1.0
  */
-public class RepairBestInsertion implements IRepair<TRSPSolution> {
+public class RepairBestInsertion implements IRepair<Solution> {
 
     private boolean           mBusy           = false;
 
     /** The currently optimized solution */
-    private TRSPSolution      mSolution;
+    private Solution      mSolution;
 
     /** A matrix containing the insertion cost of each request in each tour */
     private InsertionMove[][] mInsCostMatrix;
@@ -93,7 +93,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
         try {
             mExecutor.awaitTermination(1, TimeUnit.MINUTES);
         } catch (InterruptedException e) {
-            TRSPLogging.getBaseLogger().exception("RepairBestInsertion.setNumThreads", e);
+            Logging.getBaseLogger().exception("RepairBestInsertion.setNumThreads", e);
         }
         int proc = Math.min(Runtime.getRuntime().availableProcessors(), getNumThreads());
         mExecutor = new BatchThreadPoolExecutor(proc, "repairBI");
@@ -103,14 +103,14 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
     private BatchThreadPoolExecutor     mExecutor;
 
     /** A constraint handler for this repair component **/
-    private final TRSPConstraintHandler mConstraintHandler;
+    private final ConstraintHandler mConstraintHandler;
 
     /**
      * Getter for the constraint handler
      * 
      * @return A constraint handler for this repair component
      */
-    public TRSPConstraintHandler getConstraintHandler() {
+    public ConstraintHandler getConstraintHandler() {
         return this.mConstraintHandler;
     }
 
@@ -119,7 +119,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
      * 
      * @param constraintHandler
      */
-    public RepairBestInsertion(TRSPConstraintHandler constraintHandler) {
+    public RepairBestInsertion(ConstraintHandler constraintHandler) {
         super();
         mConstraintHandler = constraintHandler;
 
@@ -128,7 +128,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
     }
 
     @Override
-    public boolean repair(TRSPSolution solution, IDestroyResult<TRSPSolution> destroyResult, IParameters params) {
+    public boolean repair(Solution solution, IDestroyResult<Solution> destroyResult, IParameters params) {
         if (mBusy)
             throw new ConcurrentModificationException("This instance is already in use");
         mBusy = true;
@@ -152,7 +152,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
             if (mBestInsOverall != null) {
                 boolean inserted = InsertionMove.executeMove(mBestInsOverall);
                 if (inserted) {
-                    TRSPLogging.getOptimizationLogger().lowDebug(
+                    Logging.getOptimizationLogger().lowDebug(
                             "RepairBestInsertion.repair: insertion successfull - %s", mBestInsOverall);
 
                     // Remove the request from the set of pending requests
@@ -165,7 +165,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
                     mBestInsMove[mBestInsOverall.getNodeId()] = null;
                     mInsCostMatrix[mBestInsOverall.getNodeId()] = null;
                 } else {
-                    TRSPLogging.getOptimizationLogger().lowDebug("RepairBestInsertion.repair: insertion failed - %s",
+                    Logging.getOptimizationLogger().lowDebug("RepairBestInsertion.repair: insertion failed - %s",
                             mBestInsOverall);
                     break;
                 }
@@ -176,7 +176,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
         }
 
         if (!solution.getUnservedRequests().isEmpty()) {
-            TRSPLogging.getOptimizationLogger().lowDebug(
+            Logging.getOptimizationLogger().lowDebug(
                     "RepairBestInsertion.repair: Unable to repair the solution, unfeasible requests: %s",
                     solution.getUnservedRequests());
         }
@@ -192,7 +192,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
      * @param solution
      *            the solution which unserved requests will be evaluated
      */
-    private void evaluateInsCostMatrix(TRSPSolution solution) {
+    private void evaluateInsCostMatrix(Solution solution) {
         if (getNumThreads())
             evaluateInsCostMatrixParallel(solution);
         else
@@ -206,14 +206,14 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
      * @param solution
      *            the solution which unserved requests will be evaluated
      */
-    private void evaluateInsCostMatrixSequential(TRSPSolution solution) {
+    private void evaluateInsCostMatrixSequential(Solution solution) {
         // Reset overall best insertion
         mBestInsOverall = null;
         mBestInsTourOverall = -1;
 
         // Select the tour cost delegate
         // We do this to ensure we have good insertions within a tour
-        TRSPCostDelegate costDelegate = mSolution.getCostDelegate() instanceof TRSPTourBalanceDelegate ? ((TRSPTourBalanceDelegate) mSolution
+        CostDelegate costDelegate = mSolution.getCostDelegate() instanceof TourBalanceDelegate ? ((TourBalanceDelegate) mSolution
                 .getCostDelegate()).getTourCostDelegate() : mSolution.getCostDelegate();
 
         for (int req : solution.getUnservedRequests()) {
@@ -233,14 +233,14 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
 
                     // Evaluate the insertion cost of the given request in tour t
                     InsertionMove ins = InsertionMove.bestInsertion(req, mSolution.getTour(t), costDelegate,
-                            getConstraintHandler(), TRSPGlobalParameters.CTR_CHK_FWD_FEAS);
+                            getConstraintHandler(), GlobalParameters.CTR_CHK_FWD_FEAS);
 
                     if (!ins.isFeasible())
                         // The move cannot be inserted in this tour, skip
                         continue;
 
                     // Reevaluate the insertion if needed to evaluate the insertion for the whole solution
-                    if (mSolution.getCostDelegate() instanceof TRSPTourBalanceDelegate) {
+                    if (mSolution.getCostDelegate() instanceof TourBalanceDelegate) {
                         mSolution.getCostDelegate().evaluateMove(ins);
                     }
 
@@ -285,7 +285,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
      * @param solution
      *            the solution which unserved requests will be evaluated
      */
-    private void evaluateInsCostMatrixParallel(TRSPSolution solution) {
+    private void evaluateInsCostMatrixParallel(Solution solution) {
         // Reset overall best insertion
         mBestInsOverall = null;
         mBestInsTourOverall = -1;
@@ -321,12 +321,12 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
                 try {
                     f.get();
                 } catch (ExecutionException e) {
-                    TRSPLogging.getBaseLogger().exception("TRSPpInsertion.executeAllAgents", e);
+                    Logging.getBaseLogger().exception("pInsertion.executeAllAgents", e);
                 }
             }
         } catch (InterruptedException e) {
             // Wait for evaluation to finish
-            TRSPLogging.getBaseLogger().exception("TRSPpInsertion.executeAllAgents", e);
+            Logging.getBaseLogger().exception("pInsertion.executeAllAgents", e);
         } finally {
         }
 
@@ -358,7 +358,7 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
 
             // Select the tour cost delegate
             // We do this to ensure we have good insertions within a tour
-            TRSPCostDelegate costDelegate = mSolution.getCostDelegate() instanceof TRSPTourBalanceDelegate ? ((TRSPTourBalanceDelegate) mSolution
+            CostDelegate costDelegate = mSolution.getCostDelegate() instanceof TourBalanceDelegate ? ((TourBalanceDelegate) mSolution
                     .getCostDelegate()).getTourCostDelegate() : mSolution.getCostDelegate();
 
             // Evaluate all tours in the first iteration, and only the last modified tour otherwise
@@ -369,14 +369,14 @@ public class RepairBestInsertion implements IRepair<TRSPSolution> {
 
                 // Evaluate the insertion cost of the given request in tour t
                 InsertionMove ins = InsertionMove.bestInsertion(mRequest, mSolution.getTour(t), costDelegate,
-                        getConstraintHandler(), TRSPGlobalParameters.CTR_CHK_FWD_FEAS);
+                        getConstraintHandler(), GlobalParameters.CTR_CHK_FWD_FEAS);
 
                 if (!ins.isFeasible())
                     // The move cannot be inserted in this tour, skip
                     continue;
 
                 // Reevaluate the insertion if needed to evaluate the insertion for the whole solution
-                if (mSolution.getCostDelegate() instanceof TRSPTourBalanceDelegate) {
+                if (mSolution.getCostDelegate() instanceof TourBalanceDelegate) {
                     mSolution.getCostDelegate().evaluateMove(ins);
                 }
 

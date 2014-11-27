@@ -79,7 +79,7 @@ public abstract class MSASimulationCallback extends MSACallbackBase {
     @Override
     public void execute(MSACallbackEvent event) {
         MSALogging.getBaseLogger()
-                .debug("TRSPSimulationCallback.execute: handling event %s", event);
+                .debug("SimulationCallback.execute: handling event %s", event);
         beforeExecute(event);
         switch (event.getType()) {
         case EVENTS_RESOURCE:

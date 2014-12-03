@@ -223,12 +223,11 @@ public class TRSPVRPRepConverterV030 {
         // Nicelly format the output XML
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true));
 
-        // Schema schema = sf.newSchema(new URL(
-        // "http://www.beta-version.vrp-rep.org/schemas/download/vrp-rep-instance.xsd"));
-        //
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema schema = sf.newSchema(new File("lib/instance.xsd").getAbsoluteFile());
-        // marshaller.setSchema(schema);
+        Schema schema = sf.newSchema(//
+                // new URL("http://www.beta-version.vrp-rep.org/schemas/download/vrp-rep-instance.xsd"));
+                new File("lib/vrp-rep-instance.xsd").getAbsoluteFile());
+        marshaller.setSchema(schema);
 
         // Write the instance
         destFile.getParentFile().mkdirs();

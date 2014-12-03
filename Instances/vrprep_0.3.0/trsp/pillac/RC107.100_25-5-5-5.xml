@@ -1,0 +1,1846 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<instance>
+    <info>
+        <dataset>Pillac et al. 2012</dataset>
+        <name>RC107.100_25-5-5-5</name>
+    </info>
+    <network>
+        <nodes>
+            <node id="0" type="0">
+                <cx>40.0</cx>
+                <cy>50.0</cy>
+            </node>
+            <node id="1" type="1">
+                <cx>42.0</cx>
+                <cy>76.0</cy>
+            </node>
+            <node id="2" type="1">
+                <cx>82.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="3" type="1">
+                <cx>100.0</cx>
+                <cy>44.0</cy>
+            </node>
+            <node id="4" type="1">
+                <cx>3.0</cx>
+                <cy>80.0</cy>
+            </node>
+            <node id="5" type="1">
+                <cx>91.0</cx>
+                <cy>20.0</cy>
+            </node>
+            <node id="6" type="1">
+                <cx>96.0</cx>
+                <cy>8.0</cy>
+            </node>
+            <node id="7" type="1">
+                <cx>75.0</cx>
+                <cy>12.0</cy>
+            </node>
+            <node id="8" type="1">
+                <cx>63.0</cx>
+                <cy>40.0</cy>
+            </node>
+            <node id="9" type="1">
+                <cx>91.0</cx>
+                <cy>15.0</cy>
+            </node>
+            <node id="10" type="1">
+                <cx>14.0</cx>
+                <cy>22.0</cy>
+            </node>
+            <node id="11" type="1">
+                <cx>50.0</cx>
+                <cy>67.0</cy>
+            </node>
+            <node id="12" type="1">
+                <cx>90.0</cx>
+                <cy>91.0</cy>
+            </node>
+            <node id="13" type="1">
+                <cx>99.0</cx>
+                <cy>56.0</cy>
+            </node>
+            <node id="14" type="1">
+                <cx>11.0</cx>
+                <cy>42.0</cy>
+            </node>
+            <node id="15" type="1">
+                <cx>21.0</cx>
+                <cy>59.0</cy>
+            </node>
+            <node id="16" type="1">
+                <cx>75.0</cx>
+                <cy>3.0</cy>
+            </node>
+            <node id="17" type="1">
+                <cx>7.0</cx>
+                <cy>23.0</cy>
+            </node>
+            <node id="18" type="1">
+                <cx>56.0</cx>
+                <cy>98.0</cy>
+            </node>
+            <node id="19" type="1">
+                <cx>52.0</cx>
+                <cy>30.0</cy>
+            </node>
+            <node id="20" type="1">
+                <cx>71.0</cx>
+                <cy>28.0</cy>
+            </node>
+            <node id="21" type="1">
+                <cx>80.0</cx>
+                <cy>20.0</cy>
+            </node>
+            <node id="22" type="1">
+                <cx>84.0</cx>
+                <cy>11.0</cy>
+            </node>
+            <node id="23" type="1">
+                <cx>41.0</cx>
+                <cy>6.0</cy>
+            </node>
+            <node id="24" type="1">
+                <cx>68.0</cx>
+                <cy>63.0</cy>
+            </node>
+            <node id="25" type="1">
+                <cx>81.0</cx>
+                <cy>59.0</cy>
+            </node>
+            <node id="26" type="2">
+                <cx>25.0</cx>
+                <cy>85.0</cy>
+            </node>
+            <node id="27" type="2">
+                <cx>22.0</cx>
+                <cy>75.0</cy>
+            </node>
+            <node id="28" type="2">
+                <cx>22.0</cx>
+                <cy>85.0</cy>
+            </node>
+            <node id="29" type="2">
+                <cx>20.0</cx>
+                <cy>80.0</cy>
+            </node>
+            <node id="30" type="2">
+                <cx>20.0</cx>
+                <cy>85.0</cy>
+            </node>
+            <node id="31" type="2">
+                <cx>18.0</cx>
+                <cy>75.0</cy>
+            </node>
+            <node id="32" type="2">
+                <cx>15.0</cx>
+                <cy>75.0</cy>
+            </node>
+            <node id="33" type="2">
+                <cx>15.0</cx>
+                <cy>80.0</cy>
+            </node>
+            <node id="34" type="2">
+                <cx>10.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="35" type="2">
+                <cx>10.0</cx>
+                <cy>40.0</cy>
+            </node>
+            <node id="36" type="2">
+                <cx>8.0</cx>
+                <cy>40.0</cy>
+            </node>
+            <node id="37" type="2">
+                <cx>8.0</cx>
+                <cy>45.0</cy>
+            </node>
+            <node id="38" type="2">
+                <cx>5.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="39" type="2">
+                <cx>5.0</cx>
+                <cy>45.0</cy>
+            </node>
+            <node id="40" type="2">
+                <cx>2.0</cx>
+                <cy>40.0</cy>
+            </node>
+            <node id="41" type="2">
+                <cx>0.0</cx>
+                <cy>40.0</cy>
+            </node>
+            <node id="42" type="2">
+                <cx>0.0</cx>
+                <cy>45.0</cy>
+            </node>
+            <node id="43" type="2">
+                <cx>44.0</cx>
+                <cy>5.0</cy>
+            </node>
+            <node id="44" type="2">
+                <cx>42.0</cx>
+                <cy>10.0</cy>
+            </node>
+            <node id="45" type="2">
+                <cx>42.0</cx>
+                <cy>15.0</cy>
+            </node>
+            <node id="46" type="2">
+                <cx>40.0</cx>
+                <cy>5.0</cy>
+            </node>
+            <node id="47" type="2">
+                <cx>40.0</cx>
+                <cy>15.0</cy>
+            </node>
+            <node id="48" type="2">
+                <cx>38.0</cx>
+                <cy>5.0</cy>
+            </node>
+            <node id="49" type="2">
+                <cx>38.0</cx>
+                <cy>15.0</cy>
+            </node>
+            <node id="50" type="2">
+                <cx>35.0</cx>
+                <cy>5.0</cy>
+            </node>
+            <node id="51" type="2">
+                <cx>95.0</cx>
+                <cy>30.0</cy>
+            </node>
+            <node id="52" type="2">
+                <cx>95.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="53" type="2">
+                <cx>92.0</cx>
+                <cy>30.0</cy>
+            </node>
+            <node id="54" type="2">
+                <cx>90.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="55" type="2">
+                <cx>88.0</cx>
+                <cy>30.0</cy>
+            </node>
+            <node id="56" type="2">
+                <cx>88.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="57" type="2">
+                <cx>87.0</cx>
+                <cy>30.0</cy>
+            </node>
+            <node id="58" type="2">
+                <cx>85.0</cx>
+                <cy>25.0</cy>
+            </node>
+            <node id="59" type="2">
+                <cx>85.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="60" type="2">
+                <cx>67.0</cx>
+                <cy>85.0</cy>
+            </node>
+            <node id="61" type="2">
+                <cx>65.0</cx>
+                <cy>85.0</cy>
+            </node>
+            <node id="62" type="2">
+                <cx>65.0</cx>
+                <cy>82.0</cy>
+            </node>
+            <node id="63" type="2">
+                <cx>62.0</cx>
+                <cy>80.0</cy>
+            </node>
+            <node id="64" type="2">
+                <cx>60.0</cx>
+                <cy>80.0</cy>
+            </node>
+            <node id="65" type="2">
+                <cx>60.0</cx>
+                <cy>85.0</cy>
+            </node>
+            <node id="66" type="2">
+                <cx>58.0</cx>
+                <cy>75.0</cy>
+            </node>
+            <node id="67" type="2">
+                <cx>55.0</cx>
+                <cy>80.0</cy>
+            </node>
+            <node id="68" type="2">
+                <cx>55.0</cx>
+                <cy>85.0</cy>
+            </node>
+            <node id="69" type="2">
+                <cx>55.0</cx>
+                <cy>82.0</cy>
+            </node>
+            <node id="70" type="2">
+                <cx>20.0</cx>
+                <cy>82.0</cy>
+            </node>
+            <node id="71" type="2">
+                <cx>18.0</cx>
+                <cy>80.0</cy>
+            </node>
+            <node id="72" type="2">
+                <cx>2.0</cx>
+                <cy>45.0</cy>
+            </node>
+            <node id="73" type="2">
+                <cx>42.0</cx>
+                <cy>5.0</cy>
+            </node>
+            <node id="74" type="2">
+                <cx>42.0</cx>
+                <cy>12.0</cy>
+            </node>
+            <node id="75" type="2">
+                <cx>72.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="76" type="2">
+                <cx>55.0</cx>
+                <cy>20.0</cy>
+            </node>
+            <node id="77" type="2">
+                <cx>25.0</cx>
+                <cy>30.0</cy>
+            </node>
+            <node id="78" type="2">
+                <cx>20.0</cx>
+                <cy>50.0</cy>
+            </node>
+            <node id="79" type="2">
+                <cx>55.0</cx>
+                <cy>60.0</cy>
+            </node>
+            <node id="80" type="2">
+                <cx>30.0</cx>
+                <cy>60.0</cy>
+            </node>
+            <node id="81" type="2">
+                <cx>50.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="82" type="2">
+                <cx>30.0</cx>
+                <cy>25.0</cy>
+            </node>
+            <node id="83" type="2">
+                <cx>15.0</cx>
+                <cy>10.0</cy>
+            </node>
+            <node id="84" type="2">
+                <cx>10.0</cx>
+                <cy>20.0</cy>
+            </node>
+            <node id="85" type="2">
+                <cx>15.0</cx>
+                <cy>60.0</cy>
+            </node>
+            <node id="86" type="2">
+                <cx>45.0</cx>
+                <cy>65.0</cy>
+            </node>
+            <node id="87" type="2">
+                <cx>65.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="88" type="2">
+                <cx>65.0</cx>
+                <cy>20.0</cy>
+            </node>
+            <node id="89" type="2">
+                <cx>45.0</cx>
+                <cy>30.0</cy>
+            </node>
+            <node id="90" type="2">
+                <cx>35.0</cx>
+                <cy>40.0</cy>
+            </node>
+            <node id="91" type="2">
+                <cx>41.0</cx>
+                <cy>37.0</cy>
+            </node>
+            <node id="92" type="2">
+                <cx>64.0</cx>
+                <cy>42.0</cy>
+            </node>
+            <node id="93" type="2">
+                <cx>40.0</cx>
+                <cy>60.0</cy>
+            </node>
+            <node id="94" type="2">
+                <cx>31.0</cx>
+                <cy>52.0</cy>
+            </node>
+            <node id="95" type="2">
+                <cx>35.0</cx>
+                <cy>69.0</cy>
+            </node>
+            <node id="96" type="2">
+                <cx>65.0</cx>
+                <cy>55.0</cy>
+            </node>
+            <node id="97" type="2">
+                <cx>63.0</cx>
+                <cy>65.0</cy>
+            </node>
+            <node id="98" type="2">
+                <cx>2.0</cx>
+                <cy>60.0</cy>
+            </node>
+            <node id="99" type="2">
+                <cx>20.0</cx>
+                <cy>20.0</cy>
+            </node>
+            <node id="100" type="2">
+                <cx>5.0</cx>
+                <cy>5.0</cy>
+            </node>
+            <node id="101" type="2">
+                <cx>60.0</cx>
+                <cy>12.0</cy>
+            </node>
+            <node id="102" type="2">
+                <cx>23.0</cx>
+                <cy>3.0</cy>
+            </node>
+            <node id="103" type="2">
+                <cx>8.0</cx>
+                <cy>56.0</cy>
+            </node>
+            <node id="104" type="2">
+                <cx>6.0</cx>
+                <cy>68.0</cy>
+            </node>
+            <node id="105" type="2">
+                <cx>47.0</cx>
+                <cy>47.0</cy>
+            </node>
+            <node id="106" type="2">
+                <cx>49.0</cx>
+                <cy>58.0</cy>
+            </node>
+            <node id="107" type="2">
+                <cx>27.0</cx>
+                <cy>43.0</cy>
+            </node>
+            <node id="108" type="2">
+                <cx>37.0</cx>
+                <cy>31.0</cy>
+            </node>
+            <node id="109" type="2">
+                <cx>57.0</cx>
+                <cy>29.0</cy>
+            </node>
+            <node id="110" type="2">
+                <cx>63.0</cx>
+                <cy>23.0</cy>
+            </node>
+            <node id="111" type="2">
+                <cx>21.0</cx>
+                <cy>24.0</cy>
+            </node>
+            <node id="112" type="2">
+                <cx>12.0</cx>
+                <cy>24.0</cy>
+            </node>
+            <node id="113" type="2">
+                <cx>24.0</cx>
+                <cy>58.0</cy>
+            </node>
+            <node id="114" type="2">
+                <cx>67.0</cx>
+                <cy>5.0</cy>
+            </node>
+            <node id="115" type="2">
+                <cx>37.0</cx>
+                <cy>47.0</cy>
+            </node>
+            <node id="116" type="2">
+                <cx>49.0</cx>
+                <cy>42.0</cy>
+            </node>
+            <node id="117" type="2">
+                <cx>53.0</cx>
+                <cy>43.0</cy>
+            </node>
+            <node id="118" type="2">
+                <cx>61.0</cx>
+                <cy>52.0</cy>
+            </node>
+            <node id="119" type="2">
+                <cx>57.0</cx>
+                <cy>48.0</cy>
+            </node>
+            <node id="120" type="2">
+                <cx>56.0</cx>
+                <cy>37.0</cy>
+            </node>
+            <node id="121" type="2">
+                <cx>55.0</cx>
+                <cy>54.0</cy>
+            </node>
+            <node id="122" type="2">
+                <cx>4.0</cx>
+                <cy>18.0</cy>
+            </node>
+            <node id="123" type="2">
+                <cx>26.0</cx>
+                <cy>52.0</cy>
+            </node>
+            <node id="124" type="2">
+                <cx>26.0</cx>
+                <cy>35.0</cy>
+            </node>
+            <node id="125" type="2">
+                <cx>31.0</cx>
+                <cy>67.0</cy>
+            </node>
+        </nodes>
+        <euclidean/>
+        <decimals>14</decimals>
+    </network>
+    <fleet>
+        <vehicle_profile type="0" number="1">
+            <departure_node>1</departure_node>
+            <arrival_node>1</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="1" number="1">
+            <departure_node>2</departure_node>
+            <arrival_node>2</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="2" number="1">
+            <departure_node>3</departure_node>
+            <arrival_node>3</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="3" number="1">
+            <departure_node>4</departure_node>
+            <arrival_node>4</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="4" number="1">
+            <departure_node>5</departure_node>
+            <arrival_node>5</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="5" number="1">
+            <departure_node>6</departure_node>
+            <arrival_node>6</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="6" number="1">
+            <departure_node>7</departure_node>
+            <arrival_node>7</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="6">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="7" number="1">
+            <departure_node>8</departure_node>
+            <arrival_node>8</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="5">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="8" number="1">
+            <departure_node>9</departure_node>
+            <arrival_node>9</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="9" number="1">
+            <departure_node>10</departure_node>
+            <arrival_node>10</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="10" number="1">
+            <departure_node>11</departure_node>
+            <arrival_node>11</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="6">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="11" number="1">
+            <departure_node>12</departure_node>
+            <arrival_node>12</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="12" number="1">
+            <departure_node>13</departure_node>
+            <arrival_node>13</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="13" number="1">
+            <departure_node>14</departure_node>
+            <arrival_node>14</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="14" number="1">
+            <departure_node>15</departure_node>
+            <arrival_node>15</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="7">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="15" number="1">
+            <departure_node>16</departure_node>
+            <arrival_node>16</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="16" number="1">
+            <departure_node>17</departure_node>
+            <arrival_node>17</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="6">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="17" number="1">
+            <departure_node>18</departure_node>
+            <arrival_node>18</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="6">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="18" number="1">
+            <departure_node>19</departure_node>
+            <arrival_node>19</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="19" number="1">
+            <departure_node>20</departure_node>
+            <arrival_node>20</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="20" number="1">
+            <departure_node>21</departure_node>
+            <arrival_node>21</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="6">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="21" number="1">
+            <departure_node>22</departure_node>
+            <arrival_node>22</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="22" number="1">
+            <departure_node>23</departure_node>
+            <arrival_node>23</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="2">
+                <max>1.0</max>
+            </resource>
+            <resource id="3">
+                <max>1.0</max>
+            </resource>
+            <resource id="4">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="23" number="1">
+            <departure_node>24</departure_node>
+            <arrival_node>24</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="0">
+                <max>1.0</max>
+            </resource>
+            <resource id="1">
+                <max>1.0</max>
+            </resource>
+            <resource id="5">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="6">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="7">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>3.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+        <vehicle_profile type="24" number="1">
+            <departure_node>25</departure_node>
+            <arrival_node>25</arrival_node>
+            <fix_cost>0.0</fix_cost>
+            <cost_x_distance>1.0</cost_x_distance>
+            <resource id="6">
+                <start>5.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="8">
+                <start>2.0</start>
+                <max>INF</max>
+            </resource>
+            <resource id="9">
+                <start>4.0</start>
+                <max>INF</max>
+            </resource>
+        </vehicle_profile>
+    </fleet>
+    <requests>
+        <request id="0" node="26">
+            <skill>1</skill>
+            <resource id="3">1.0</resource>
+            <resource id="7">1.0</resource>
+        </request>
+        <request id="1" node="27">
+            <skill>1</skill>
+            <resource id="3">1.0</resource>
+            <resource id="7">1.0</resource>
+        </request>
+        <request id="2" node="28">
+            <skill>1</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="3" node="29">
+            <skill>4</skill>
+        </request>
+        <request id="4" node="30">
+            <skill>1</skill>
+            <resource id="2">1.0</resource>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="5" node="31">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+        </request>
+        <request id="6" node="32">
+            <skill>0</skill>
+            <resource id="6">1.0</resource>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="7" node="33">
+            <skill>3</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="8" node="34">
+            <skill>0</skill>
+            <resource id="6">1.0</resource>
+        </request>
+        <request id="9" node="35">
+            <skill>4</skill>
+        </request>
+        <request id="10" node="36">
+            <skill>3</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="11" node="37">
+            <skill>0</skill>
+            <resource id="0">1.0</resource>
+            <resource id="6">1.0</resource>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="12" node="38">
+            <skill>2</skill>
+        </request>
+        <request id="13" node="39">
+            <skill>3</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="14" node="40">
+            <skill>2</skill>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="15" node="41">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+        </request>
+        <request id="16" node="42">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="3">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="17" node="43">
+            <skill>0</skill>
+            <resource id="6">1.0</resource>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="18" node="44">
+            <skill>2</skill>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="19" node="45">
+            <skill>0</skill>
+            <resource id="0">1.0</resource>
+            <resource id="6">1.0</resource>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="20" node="46">
+            <skill>3</skill>
+            <resource id="2">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="21" node="47">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="7">1.0</resource>
+        </request>
+        <request id="22" node="48">
+            <skill>4</skill>
+            <resource id="4">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="23" node="49">
+            <skill>0</skill>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="24" node="50">
+            <skill>3</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="25" node="51">
+            <skill>0</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+        </request>
+        <request id="26" node="52">
+            <skill>2</skill>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="27" node="53">
+            <skill>1</skill>
+            <resource id="2">1.0</resource>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="28" node="54">
+            <skill>4</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+        </request>
+        <request id="29" node="55">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="30" node="56">
+            <skill>2</skill>
+            <resource id="2">1.0</resource>
+            <resource id="3">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="31" node="57">
+            <skill>3</skill>
+        </request>
+        <request id="32" node="58">
+            <skill>4</skill>
+            <resource id="7">1.0</resource>
+        </request>
+        <request id="33" node="59">
+            <skill>0</skill>
+            <resource id="0">1.0</resource>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="34" node="60">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+        </request>
+        <request id="35" node="61">
+            <skill>0</skill>
+        </request>
+        <request id="36" node="62">
+            <skill>2</skill>
+            <resource id="2">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="37" node="63">
+            <skill>3</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="38" node="64">
+            <skill>3</skill>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="39" node="65">
+            <skill>2</skill>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="40" node="66">
+            <skill>3</skill>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="41" node="67">
+            <skill>4</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="42" node="68">
+            <skill>2</skill>
+            <resource id="2">1.0</resource>
+            <resource id="3">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="43" node="69">
+            <skill>2</skill>
+        </request>
+        <request id="44" node="70">
+            <skill>0</skill>
+            <resource id="4">1.0</resource>
+            <resource id="6">1.0</resource>
+        </request>
+        <request id="45" node="71">
+            <skill>2</skill>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="46" node="72">
+            <skill>0</skill>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="47" node="73">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="48" node="74">
+            <skill>0</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+        </request>
+        <request id="49" node="75">
+            <skill>4</skill>
+            <resource id="2">1.0</resource>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="50" node="76">
+            <skill>3</skill>
+            <resource id="4">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="51" node="77">
+            <skill>4</skill>
+        </request>
+        <request id="52" node="78">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="53" node="79">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="2">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="54" node="80">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="55" node="81">
+            <skill>1</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="56" node="82">
+            <skill>4</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+        </request>
+        <request id="57" node="83">
+            <skill>4</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="58" node="84">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="59" node="85">
+            <skill>4</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="60" node="86">
+            <skill>0</skill>
+            <resource id="6">1.0</resource>
+        </request>
+        <request id="61" node="87">
+            <skill>3</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="62" node="88">
+            <skill>4</skill>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="63" node="89">
+            <skill>4</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+        </request>
+        <request id="64" node="90">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="65" node="91">
+            <skill>2</skill>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="66" node="92">
+            <skill>2</skill>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="67" node="93">
+            <skill>4</skill>
+            <resource id="2">1.0</resource>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="68" node="94">
+            <skill>1</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="69" node="95">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="2">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="70" node="96">
+            <skill>2</skill>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="71" node="97">
+            <skill>2</skill>
+            <resource id="3">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="72" node="98">
+            <skill>1</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="73" node="99">
+            <skill>3</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="74" node="100">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="3">1.0</resource>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="75" node="101">
+            <skill>0</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+            <resource id="6">1.0</resource>
+        </request>
+        <request id="76" node="102">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="77" node="103">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="2">1.0</resource>
+        </request>
+        <request id="78" node="104">
+            <skill>3</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+        </request>
+        <request id="79" node="105">
+            <skill>0</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+            <resource id="6">1.0</resource>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="80" node="106">
+            <skill>1</skill>
+            <resource id="3">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="81" node="107">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="2">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="82" node="108">
+            <skill>0</skill>
+            <resource id="4">1.0</resource>
+        </request>
+        <request id="83" node="109">
+            <skill>1</skill>
+            <resource id="0">1.0</resource>
+            <resource id="2">1.0</resource>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="84" node="110">
+            <skill>4</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="85" node="111">
+            <skill>1</skill>
+            <resource id="2">1.0</resource>
+            <resource id="3">1.0</resource>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="86" node="112">
+            <skill>1</skill>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="87" node="113">
+            <skill>1</skill>
+            <resource id="2">1.0</resource>
+            <resource id="3">1.0</resource>
+        </request>
+        <request id="88" node="114">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="89" node="115">
+            <skill>3</skill>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="90" node="116">
+            <skill>1</skill>
+            <resource id="2">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="91" node="117">
+            <skill>1</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="92" node="118">
+            <skill>4</skill>
+            <resource id="2">1.0</resource>
+            <resource id="4">1.0</resource>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="93" node="119">
+            <skill>2</skill>
+            <resource id="1">1.0</resource>
+            <resource id="3">1.0</resource>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="94" node="120">
+            <skill>0</skill>
+            <resource id="4">1.0</resource>
+            <resource id="6">1.0</resource>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="95" node="121">
+            <skill>4</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+        <request id="96" node="122">
+            <skill>0</skill>
+            <resource id="8">1.0</resource>
+        </request>
+        <request id="97" node="123">
+            <skill>0</skill>
+            <resource id="2">1.0</resource>
+            <resource id="6">1.0</resource>
+        </request>
+        <request id="98" node="124">
+            <skill>2</skill>
+            <resource id="5">1.0</resource>
+        </request>
+        <request id="99" node="125">
+            <skill>4</skill>
+            <resource id="7">1.0</resource>
+            <resource id="9">1.0</resource>
+        </request>
+    </requests>
+    <resources>
+        <resource id="0" renewable="true" name="tool-0">INF</resource>
+        <resource id="1" renewable="true" name="tool-1">INF</resource>
+        <resource id="2" renewable="true" name="tool-2">INF</resource>
+        <resource id="3" renewable="true" name="tool-3">INF</resource>
+        <resource id="4" renewable="true" name="tool-4">INF</resource>
+        <resource id="5" renewable="false" name="spare-part-0">INF</resource>
+        <resource id="6" renewable="false" name="spare-part-1">INF</resource>
+        <resource id="7" renewable="false" name="spare-part-2">INF</resource>
+        <resource id="8" renewable="false" name="spare-part-3">INF</resource>
+        <resource id="9" renewable="false" name="spare-part-4">INF</resource>
+    </resources>
+    <drivers>
+        <driver_profile type="0">
+            <compatible_vehicle_type>0</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="1">
+            <compatible_vehicle_type>1</compatible_vehicle_type>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="2">
+            <compatible_vehicle_type>2</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="3">
+            <compatible_vehicle_type>3</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="3"/>
+        </driver_profile>
+        <driver_profile type="4">
+            <compatible_vehicle_type>4</compatible_vehicle_type>
+            <skill id="1"/>
+            <skill id="2"/>
+        </driver_profile>
+        <driver_profile type="5">
+            <compatible_vehicle_type>5</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="3"/>
+        </driver_profile>
+        <driver_profile type="6">
+            <compatible_vehicle_type>6</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="3"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="7">
+            <compatible_vehicle_type>7</compatible_vehicle_type>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="8">
+            <compatible_vehicle_type>8</compatible_vehicle_type>
+            <skill id="1"/>
+            <skill id="2"/>
+        </driver_profile>
+        <driver_profile type="9">
+            <compatible_vehicle_type>9</compatible_vehicle_type>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="10">
+            <compatible_vehicle_type>10</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="3"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="11">
+            <compatible_vehicle_type>11</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="12">
+            <compatible_vehicle_type>12</compatible_vehicle_type>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="13">
+            <compatible_vehicle_type>13</compatible_vehicle_type>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="14">
+            <compatible_vehicle_type>14</compatible_vehicle_type>
+            <skill id="1"/>
+            <skill id="3"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="15">
+            <compatible_vehicle_type>15</compatible_vehicle_type>
+            <skill id="2"/>
+            <skill id="3"/>
+        </driver_profile>
+        <driver_profile type="16">
+            <compatible_vehicle_type>16</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="3"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="17">
+            <compatible_vehicle_type>17</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="3"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="18">
+            <compatible_vehicle_type>18</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="2"/>
+            <skill id="3"/>
+        </driver_profile>
+        <driver_profile type="19">
+            <compatible_vehicle_type>19</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="3"/>
+        </driver_profile>
+        <driver_profile type="20">
+            <compatible_vehicle_type>20</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="3"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="21">
+            <compatible_vehicle_type>21</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="2"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="22">
+            <compatible_vehicle_type>22</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="1"/>
+            <skill id="2"/>
+        </driver_profile>
+        <driver_profile type="23">
+            <compatible_vehicle_type>23</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="2"/>
+            <skill id="3"/>
+            <skill id="4"/>
+        </driver_profile>
+        <driver_profile type="24">
+            <compatible_vehicle_type>24</compatible_vehicle_type>
+            <skill id="0"/>
+            <skill id="3"/>
+        </driver_profile>
+    </drivers>
+</instance>
